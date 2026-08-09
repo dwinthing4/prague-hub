@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Praha HQ</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Praha HQ">
+<meta name="theme-color" content="#0F1F33">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSIzNiIgZmlsbD0iIzBGMUYzMyIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9Ijk2IiByPSI3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNkZDN0Q2IiBzdHJva2Utd2lkdGg9IjMiLz4KPGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iNCIgZmlsbD0iI0U4QTMzRCIvPgo8cGF0aCBkPSJNOTYgMzAgTDEwNiA5NiBMOTYgMTYyIEw4NiA5NiBaIiBmaWxsPSIjRThBMzNEIi8+CjxwYXRoIGQ9Ik0zMCA5NiBMOTYgODYgTDE2MiA5NiBMOTYgMTA2IFoiIGZpbGw9IiNGNkYwREYiIG9wYWNpdHk9IjAuODUiLz4KPHRleHQgeD0iOTYiIHk9IjE4MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2RkM3RDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBSQUhBPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj4KPHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIHJ4PSIzNiIgZmlsbD0iIzBGMUYzMyIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9Ijk2IiByPSI3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNkZDN0Q2IiBzdHJva2Utd2lkdGg9IjMiLz4KPGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iNCIgZmlsbD0iI0U4QTMzRCIvPgo8cGF0aCBkPSJNOTYgMzAgTDEwNiA5NiBMOTYgMTYyIEw4NiA5NiBaIiBmaWxsPSIjRThBMzNEIi8+CjxwYXRoIGQ9Ik0zMCA5NiBMOTYgODYgTDE2MiA5NiBMOTYgMTA2IFoiIGZpbGw9IiNGNkYwREYiIG9wYWNpdHk9IjAuODUiLz4KPHRleHQgeD0iOTYiIHk9IjE4MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2RkM3RDYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBSQUhBPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1F33;
+  --navy-deep:#0A1626;
+  --navy-card:#152840;
+  --paper:#F6F0DF;
+  --paper-dim:#EAE2CC;
+  --ink:#1B2733;
+  --cyan:#6FC7D6;
+  --amber:#E8A33D;
+  --rust:#C1592F;
+  --green:#5C9C6C;
+  --muted:#8CA0B3;
+  --line: rgba(111,199,214,0.25);
+  --radius: 14px;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{margin:0; background:var(--navy-deep); color:var(--paper); font-family:'Inter',system-ui,sans-serif; overscroll-behavior:none;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.display{font-family:'Fraunces',serif;}
+#app{
+  max-width:520px; margin:0 auto; min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:column;
+  background:
+    linear-gradient(var(--navy-deep), var(--navy-deep)) padding-box,
+    repeating-linear-gradient(0deg, transparent, transparent 39px, var(--line) 39px, var(--line) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, var(--line) 39px, var(--line) 40px);
+  background-color:var(--navy-deep); position:relative;
+}
+header#topbar{
+  position:sticky; top:0; z-index:30; padding:16px 18px 12px;
+  background:linear-gradient(180deg, var(--navy-deep) 70%, transparent);
+  display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--line);
+}
+header#topbar .back-btn{
+  width:34px;height:34px;border-radius:9px;border:1px solid var(--line);
+  background:var(--navy-card); color:var(--cyan); font-size:16px;
+  display:flex;align-items:center;justify-content:center; cursor:pointer; flex-shrink:0;
+}
+header#topbar .back-btn.hidden{visibility:hidden;}
+header#topbar .titles{flex:1; min-width:0;}
+header#topbar .eyebrow{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.14em; color:var(--amber); text-transform:uppercase; margin-bottom:2px; display:flex; align-items:center; gap:6px;}
+header#topbar h1{font-family:'Fraunces',serif; font-weight:600; font-size:22px; margin:0; letter-spacing:-0.01em; color:var(--paper);}
+header#topbar .gear-btn{
+  width:34px;height:34px;border-radius:9px;border:1px solid var(--line);
+  background:var(--navy-card); color:var(--cyan); font-size:16px;
+  display:flex;align-items:center;justify-content:center; cursor:pointer; flex-shrink:0;
+}
+.edit-badge{font-size:8.5px; background:var(--rust); color:#fff; padding:1px 6px; border-radius:20px; letter-spacing:.05em;}
+main#content{flex:1; padding:6px 16px 100px; overflow-x:hidden;}
+.screen{display:none; animation:fadein .18s ease;}
+.screen.active{display:block;}
+@keyframes fadein{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+.card{background:var(--paper); color:var(--ink); border-radius:var(--radius); padding:16px; margin-bottom:12px; position:relative; box-shadow:0 1px 0 rgba(0,0,0,0.2), 0 8px 20px -12px rgba(0,0,0,0.5);}
+.card::before, .card::after{content:""; position:absolute; width:9px; height:9px; border-color:var(--navy); border-style:solid; opacity:.35;}
+.card::before{top:6px;left:6px;border-width:1.5px 0 0 1.5px;}
+.card::after{bottom:6px;right:6px;border-width:0 1.5px 1.5px 0;}
+.card-dark{background:var(--navy-card); color:var(--paper); border:1px solid var(--line);}
+.card-dark::before,.card-dark::after{border-color:var(--cyan);}
+.section-label{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--cyan); margin:22px 0 10px; display:flex; align-items:center; gap:8px;}
+.section-label::after{content:""; flex:1; height:1px; background:var(--line);}
+.section-label:first-child{margin-top:8px;}
+h2.card-title{font-family:'Fraunces',serif; font-size:17px; margin:0 0 4px; font-weight:600;}
+p.card-sub{margin:0; font-size:12.5px; color:#5b6a78; line-height:1.4;}
+button{font-family:inherit; cursor:pointer;}
+.btn{border:none; border-radius:10px; padding:10px 14px; font-weight:600; font-size:13.5px; background:var(--navy); color:var(--paper);}
+.btn-amber{background:var(--amber); color:var(--navy-deep);}
+.btn-outline{background:transparent; border:1.5px solid var(--ink); color:var(--ink);}
+.btn-outline-light{background:transparent; border:1.5px solid var(--cyan); color:var(--cyan);}
+.btn-sm{padding:6px 10px; font-size:12px; border-radius:8px;}
+.btn-block{width:100%;}
+.btn-danger{background:transparent; color:var(--rust); border:1px solid var(--rust);}
+.icon-btn{background:none;border:none;color:inherit;font-size:16px;padding:4px;opacity:.7;}
+.icon-btn:hover{opacity:1;}
+input,select,textarea{width:100%; font-family:'Inter',sans-serif; font-size:14px; padding:9px 10px; border-radius:8px; border:1.5px solid #d7cfb6; background:#fff; color:var(--ink); margin-bottom:8px;}
+textarea{resize:vertical; min-height:56px;}
+label.f{display:block; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:#7a6f52; margin-bottom:3px;}
+.field{margin-bottom:10px;}
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.add-toggle{display:flex; align-items:center; justify-content:center; gap:6px; width:100%; padding:11px; border-radius:12px; border:1.5px dashed var(--line); background:transparent; color:var(--cyan); font-weight:600; font-size:13px; margin-bottom:14px;}
+.form-panel{display:none; margin-bottom:14px;}
+.form-panel.open{display:block;}
+.form-panel .card{position:relative; padding-top:34px;}
+.form-close{position:absolute; top:8px; right:8px; color:var(--rust); font-size:15px; background:#f1e9d3; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center;}
+.hero{border-radius:18px; padding:22px 18px 20px; margin:10px 0 6px; background: radial-gradient(120% 140% at 100% 0%, rgba(232,163,61,0.28), transparent 55%), linear-gradient(160deg, var(--navy-card), var(--navy-deep)); border:1px solid var(--line); position:relative; overflow:hidden;}
+.hero .compass{position:absolute; right:-18px; top:-18px; width:120px; height:120px; opacity:.18;}
+.hero .eyebrow{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.16em; color:var(--amber); text-transform:uppercase;}
+.hero .count{font-family:'Fraunces',serif; font-size:52px; font-weight:600; line-height:1; margin:6px 0 2px;}
+.hero .count span{font-size:18px; font-weight:500; color:var(--muted);}
+.hero .sub{color:var(--muted); font-size:13px;}
+.hero[role="button"]{cursor:pointer;}
+.hero[role="button"]:focus{outline:2px solid var(--cyan); outline-offset:2px;}
+.theme-swatch-wrap{display:inline-flex; flex-direction:column; align-items:center; vertical-align:top; margin-right:10px; margin-bottom:8px;}
+.stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:4px;}
+.stat{background:var(--navy-card); border:1px solid var(--line); border-radius:12px; padding:12px 14px;}
+.stat .lbl{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase;}
+.stat .val{font-family:'Fraunces',serif; font-size:22px; margin-top:2px;}
+.upcoming-row{display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px dashed #d7cfb6;}
+.upcoming-row:last-child{border-bottom:none;}
+.upcoming-date{font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--rust); background:#f1e9d3; border-radius:7px; padding:5px 7px; text-align:center; min-width:42px;}
+.upcoming-date b{display:block; font-size:15px; font-family:'Fraunces',serif;}
+.more-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:8px;}
+.more-tile{background:var(--navy-card); border:1px solid var(--line); border-radius:14px; padding:18px 14px; text-align:left; color:var(--paper); display:flex; flex-direction:column; gap:8px; position:relative;}
+.more-tile .emoji{font-size:26px;}
+.more-tile .name{font-family:'Fraunces',serif; font-size:15px; font-weight:600;}
+.more-tile .desc{font-size:11.5px; color:var(--muted); line-height:1.3;}
+.more-tile .hide-x{position:absolute; top:8px; right:8px; color:var(--rust); font-size:13px; background:rgba(0,0,0,0.3); border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center;}
+.more-tile .reorder-row{display:flex; gap:6px; margin-top:2px;}
+.more-tile .reorder-row button{flex:1; background:rgba(255,255,255,0.08); border:1px solid var(--line); color:var(--cyan); border-radius:6px; font-size:12px; padding:3px 0;}
+.theme-swatch{display:inline-flex; flex-direction:column; align-items:center; gap:5px; margin-right:12px; margin-bottom:6px;}
+.theme-swatch .dots{display:flex; gap:3px; border-radius:8px; padding:6px; border:2px solid transparent;}
+.theme-swatch.active .dots{border-color:var(--cyan);}
+.theme-swatch .d{width:14px; height:14px; border-radius:50%;}
+.theme-swatch span{font-size:10px; color:#8CA0B3;}
+.logo-preview{width:44px; height:44px; border-radius:10px; object-fit:cover; margin-right:8px; flex-shrink:0; display:none;}
+nav#bottomnav{position:fixed; bottom:0; left:0; right:0; z-index:40; max-width:520px; margin:0 auto; background:rgba(10,22,38,0.92); backdrop-filter:blur(10px); border-top:1px solid var(--line); display:flex; padding:8px 6px calc(8px + env(safe-area-inset-bottom));}
+nav#bottomnav button{flex:1; background:none; border:none; color:var(--muted); display:flex; flex-direction:column; align-items:center; gap:3px; font-size:9.5px; font-family:'JetBrains Mono',monospace; letter-spacing:.03em; padding:4px 0; text-transform:uppercase;}
+nav#bottomnav button .ic{font-size:19px;}
+nav#bottomnav button.active{color:var(--amber);}
+.cal-nav{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+.cal-nav .mlabel{font-family:'Fraunces',serif; font-size:18px; font-weight:600;}
+.cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:4px; margin-bottom:14px;}
+.cal-dow{text-align:center; font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--muted); padding-bottom:4px;}
+.cal-day{aspect-ratio:1; border-radius:8px; background:var(--navy-card); border:1px solid var(--line); display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:12px; position:relative; color:var(--paper);}
+.cal-day.empty{background:transparent; border-color:transparent;}
+.cal-day.today{border-color:var(--amber); border-width:1.5px;}
+.cal-day .dot{width:4px;height:4px;border-radius:50%;background:var(--amber); position:absolute; bottom:4px;}
+.event-item{display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px dashed #d7cfb6;}
+.event-item:last-child{border-bottom:none;}
+.tag{display:inline-block; font-size:9.5px; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px; border-radius:20px; color:#fff;}
+.item{background:var(--paper); border-radius:12px; padding:12px 14px; margin-bottom:9px; position:relative; color:var(--ink);}
+.item-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+.item-title{font-family:'Fraunces',serif; font-weight:600; font-size:15px;}
+.item-meta{font-size:11.5px; color:#6a6250; margin-top:2px;}
+.item-actions{display:flex; gap:2px; flex-shrink:0;}
+.stars{color:var(--rust); letter-spacing:1px; font-size:13px;}
+.pill{display:inline-block; background:#eee3c4; color:#7a5a1e; font-size:10.5px; padding:2px 8px; border-radius:20px; font-weight:600; margin-right:4px;}
+.linkchip{display:inline-block; font-size:11px; background:#dcecef; color:#1c5f6b; padding:4px 9px; border-radius:20px; margin:4px 6px 0 0; text-decoration:none; font-weight:600;}
+.check-item{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px dashed #d7cfb6;}
+.check-item:last-child{border-bottom:none;}
+.check-item input[type=checkbox]{width:18px;height:18px; margin:0; flex-shrink:0;}
+.check-item.done .clabel{text-decoration:line-through; color:#9a9078;}
+.empty-msg{color:var(--muted); font-size:13px; text-align:center; padding:24px 10px; border:1.5px dashed var(--line); border-radius:12px;}
+.bar-row{margin-bottom:10px;}
+.bar-row .blabel{display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;}
+.bar-track{height:8px; border-radius:6px; background:rgba(255,255,255,0.08); overflow:hidden;}
+.bar-fill{height:100%; border-radius:6px; background:var(--cyan);}
+.trip-img{width:100%; height:120px; object-fit:cover; border-radius:10px; margin-bottom:10px; display:block; background:#ddd;}
+.fx-box{display:flex; align-items:center; gap:8px;}
+.fx-box input{margin-bottom:0;}
+.fx-eq{color:var(--muted); font-size:18px;}
+.photo-row{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+.photo-row label.filebtn{flex:1; text-align:center; padding:9px; border-radius:8px; border:1.5px dashed #d7cfb6; font-size:12.5px; color:#7a6f52; cursor:pointer;}
+.photo-preview{max-height:70px; border-radius:8px; display:none;}
+.catchip{display:inline-flex; align-items:center; gap:6px; background:#eee3c4; color:#4a4326; font-size:12px; padding:5px 6px 5px 11px; border-radius:20px; margin:0 6px 6px 0;}
+.catchip button{background:none;border:none;color:var(--rust); font-size:13px; padding:0 3px;}
+.toggle-row{display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #d7cfb6;}
+.toggle-row:last-child{border-bottom:none;}
+.switch{position:relative; width:42px; height:24px; flex-shrink:0;}
+.switch input{opacity:0; width:0; height:0;}
+.slider{position:absolute; cursor:pointer; inset:0; background:#d7cfb6; border-radius:20px; transition:.2s;}
+.slider::before{content:""; position:absolute; height:18px; width:18px; left:3px; top:3px; background:white; border-radius:50%; transition:.2s;}
+input:checked + .slider{background:var(--green);}
+input:checked + .slider::before{transform:translateX(18px);}
+.color-dot{width:14px;height:14px;border-radius:50%; display:inline-block; margin-right:6px; flex-shrink:0;}
+.map-embed{width:100%; height:150px; border:0; border-radius:10px; margin-top:6px; display:block;}
+.map-block{margin-top:8px;}
+.map-modes{display:flex; gap:6px;}
+.mode-btn{flex:1; font-size:11px; padding:7px 4px; border-radius:8px; border:1.5px solid #d7cfb6; background:#fff; color:#5b6a78; font-weight:700;}
+.mode-btn.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+.map-meta{font-size:10.5px; color:#8a8064; margin-top:5px;}
+::-webkit-scrollbar{width:0;height:0;}
+
+/* FULL VISUAL EDITOR */
+.visual-edit-selected{outline:2px dashed var(--amber)!important;outline-offset:3px;cursor:move!important;}
+#visualEditorBar{position:fixed;left:8px;right:8px;bottom:8px;z-index:99999;background:rgba(10,22,38,.98);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px;box-shadow:0 12px 40px rgba(0,0,0,.35);display:none;max-height:42vh;overflow:auto;}
+#visualEditorBar.open{display:block;}
+#visualEditorBar .ve-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;}
+#visualEditorBar .ve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px;}
+#visualEditorBar label{font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#b9c3cc;display:block;}
+#visualEditorBar input,#visualEditorBar select{width:100%;margin:3px 0 0;background:#152840;color:#fff;border:1px solid #42566a;border-radius:7px;padding:6px;font-size:11px;box-sizing:border-box;}
+#visualEditorBar input[type=color]{height:32px;padding:2px;}
+#visualEditorBar .ve-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+#visualEditorBar .ve-actions button{border:1px solid #526579;background:#20364f;color:#fff;border-radius:8px;padding:7px 9px;font-size:11px;}
+.visual-edit-hidden{display:none!important;}
+@media(max-width:600px){#visualEditorBar{left:5px;right:5px;bottom:5px;max-height:50vh}.visual-edit-selected{outline-width:1px;}}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <header id="topbar">
+    <button class="back-btn hidden" id="backBtn" onclick="goBack()">‹</button>
+    <img class="logo-preview" id="headerLogo">
+    <div class="titles">
+      <div class="eyebrow" id="topEyebrow">PRAHA HQ <span class="edit-badge" id="editBadge" style="display:none;">EDIT MODE</span></div>
+      <h1 id="topTitle">Home</h1>
+    </div>
+    <button class="gear-btn" onclick="openSection('settings')">⚙</button>
+  </header>
+
+  <main id="content">
+
+    <!-- DASHBOARD -->
+    <section class="screen active" id="screen-dashboard">
+      <div class="hero" onclick="openImportantDates()" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openImportantDates()">
+        <svg class="compass" viewBox="0 0 192 192"><circle cx="96" cy="96" r="70" fill="none" stroke="#6FC7D6" stroke-width="3"/><path d="M96 30 L106 96 L96 162 L86 96 Z" fill="#E8A33D"/><path d="M30 96 L96 86 L162 96 L96 106 Z" fill="#F6F0DF" opacity="0.85"/></svg>
+        <div class="eyebrow" id="dashEyebrow">DEPARTURE COUNTDOWN</div>
+        <div class="count" id="dashCountdown">—<span> days</span></div>
+        <div class="sub" id="dashSub">to Prague</div>
+        <div style="margin-top:8px; font-size:10px; color:var(--muted);">Tap to view important dates</div>
+      </div>
+
+      <div class="card" id="importantDatesPanel" style="display:none; margin-top:10px;">
+        <div class="item-top">
+          <div>
+            <h2 class="card-title">Important dates</h2>
+            <p class="card-sub">Dates marked as important in your calendar.</p>
+          </div>
+          <button class="icon-btn" onclick="event.stopPropagation(); closeImportantDates()">✕</button>
+        </div>
+        <div id="importantDatesList" style="margin-top:8px;"></div>
+      </div>
+
+      <div class="stat-grid" style="margin-top:12px;">
+        <div class="stat"><div class="lbl">Spent this month</div><div class="val" id="dashSpent">0 Kc</div></div>
+        <div class="stat"><div class="lbl">Predicted upcoming</div><div class="val" id="dashPredicted">$0</div></div>
+      </div>
+
+      <div class="card" id="wordOfDayCard" style="margin-top:10px;">
+        <div class="section-label" style="margin:0 0 5px;">CZECH WORD OF THE DAY</div>
+        <div id="wordOfDayCzech" style="font-family:'Fraunces',serif;font-size:28px;line-height:1.1;">Ahoj</div>
+        <div id="wordOfDayEnglish" class="card-sub" style="margin-top:4px;">Hi / Bye</div>
+        <div id="wordOfDayPronunciation" class="mono" style="font-size:11px;margin-top:3px;color:var(--muted);">AH-hoy</div>
+        <button class="btn btn-outline" style="margin-top:9px;" onclick="shuffleWordOfDay()">↻ Shuffle</button>
+      </div>
+
+      <div class="card" id="weatherCard" style="margin-top:10px; display:none;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div>
+            <div class="lbl mono" style="font-size:10px; letter-spacing:.08em; color:#8a8064; text-transform:uppercase;" id="weatherPlace">Prague</div>
+            <div style="font-family:'Fraunces',serif; font-size:32px; line-height:1.1;" id="weatherTemp">--°</div>
+            <div class="card-sub" id="weatherDesc"></div>
+          </div>
+          <div style="font-size:40px;" id="weatherIcon">🌤️</div>
+        </div>
+        <div id="weatherForecast" style="display:flex; gap:8px; margin-top:12px; overflow-x:auto;"></div>
+      </div>
+      <div class="card" id="weatherFallback" style="margin-top:10px; display:none;">
+        <p class="card-sub">Live weather isn't loading right now. <a href="https://www.google.com/search?q=weather+prague" target="_blank" style="color:var(--rust); font-weight:600;">Check Prague weather →</a></p>
+      </div>
+
+      <div class="section-label">Next up</div>
+      <div class="card" id="dashUpcoming"></div>
+
+      <div class="section-label">Quick convert</div>
+      <div class="card">
+        <div class="fx-box">
+          <div style="flex:1;"><label class="f">USD</label><input type="number" id="fxUsd" value="1" oninput="fxFromUsd()"></div>
+          <div class="fx-eq">=</div>
+          <div style="flex:1;"><label class="f">CZK</label><input type="number" id="fxCzk" oninput="fxFromCzk()"></div>
+        </div>
+        <p class="card-sub">Rate: 1 USD is about <span id="fxRateLabel">-</span> CZK - <span onclick="openFxEdit()" style="color:var(--rust); text-decoration:underline; cursor:pointer;">update rate</span></p>
+      </div>
+
+      <div class="section-label">Jump to</div>
+      <div class="more-grid">
+        <button class="more-tile" onclick="openSection('todo')"><div class="emoji">✅</div><div class="name">Bucket List</div><div class="desc">Custom to-dos & goals</div></button>
+        <button class="more-tile" onclick="openSection('food')"><div class="emoji">🍽️</div><div class="name">Food</div><div class="desc">Tracker, planner, spots</div></button>
+        <button class="more-tile" onclick="openSection('places')"><div class="emoji">📍</div><div class="name">Places</div><div class="desc">Visit list & ratings</div></button>
+        <button class="more-tile" onclick="openSection('more')"><div class="emoji">🧭</div><div class="name">More</div><div class="desc">All the other tools</div></button>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="screen" id="screen-calendar">
+      <div class="cal-nav">
+        <button class="icon-btn" onclick="calShift(-1)">‹</button>
+        <div class="mlabel" id="calLabel"></div>
+        <button class="icon-btn" onclick="calShift(1)">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+
+      <button class="add-toggle" onclick="openEventForm()">+ Add event</button>
+      <div class="form-panel" id="evtForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('evtForm')">✕</button>
+          <div class="field"><label class="f">Title</label><input id="evtTitle" placeholder="Sparta hockey game"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Date</label><input type="date" id="evtDate"></div>
+            <div class="field"><label class="f">Time</label><input type="time" id="evtTime"></div>
+          </div>
+          <div class="field"><label class="f">Category</label><select id="evtCat"></select></div>
+          <div class="toggle-row">
+  <div>
+    <h2 class="card-title" style="font-size:15px">Important date</h2>
+    <p class="card-sub">Show this in the dashboard countdown.</p>
+  </div>
+
+  <label class="switch">
+    <input type="checkbox" id="evtImportant">
+    <span class="slider"></span>
+  </label>
+</div>
+
+
+
+
+          <div class="field"><label class="f">Location (optional - shows a route)</label><input id="evtLocation" placeholder="O2 Arena, Prague"></div>
+          <div class="field"><label class="f">Est. cost (USD, optional)</label><input type="number" id="evtCost" placeholder="Adds to predicted budget"></div>
+          <div class="field"><label class="f">Website / ticket link</label><input id="evtLink" placeholder="https://..."></div>
+          <div class="field"><label class="f">Notes</label><textarea id="evtNotes"></textarea></div>
+          <input type="hidden" id="editingEventId">
+          <button class="btn btn-amber btn-block" onclick="saveEvent()">Save event</button>
+        </div>
+      </div>
+
+      <div class="section-label">All events</div>
+      <div id="calList"></div>
+    </section>
+
+    <!-- BUDGET -->
+    <section class="screen" id="screen-budget">
+      <div class="card">
+        <label class="f">Monthly budget goal (USD)</label>
+        <input type="number" id="budgetGoal" oninput="saveBudgetGoal()">
+        <div class="bar-row" style="margin-top:10px;">
+          <div class="blabel"><span id="budgetSpentLabel">$0 spent</span><span id="budgetGoalLabel">of $0</span></div>
+          <div class="bar-track"><div class="bar-fill" id="budgetBarFill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="section-label">Predicted upcoming costs</div>
+      <div class="card">
+        <p class="card-sub" style="margin-bottom:8px;">Auto-totalled from trip ideas, planned meals, and events with an estimated cost - before you've actually spent anything.</p>
+        <div id="predictedBreakdown"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; padding-top:10px; border-top:1.5px solid #e2d9bd;">
+          <span class="item-title" style="font-size:14px;">Total predicted</span>
+          <span class="item-title" style="font-size:18px;" id="predictedTotal">$0</span>
+        </div>
+      </div>
+
+      <div class="section-label">By category (actual, this month)</div>
+      <div class="card" id="budgetByCat"></div>
+
+      <button class="add-toggle" onclick="openExpenseForm()">+ Log expense</button>
+      <div class="form-panel" id="budForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('budForm')">✕</button>
+          <div class="row2">
+            <div class="field"><label class="f">Date</label><input type="date" id="budDate"></div>
+            <div class="field"><label class="f">Category</label><select id="budCat"></select></div>
+          </div>
+          <div class="field"><label class="f">Description</label><input id="budDesc" placeholder="Groceries at Albert"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Amount (CZK)</label><input type="number" id="budAmtCzk"></div>
+            <div class="field"><label class="f">or Amount (USD)</label><input type="number" id="budAmtUsd"></div>
+          </div>
+          <input type="hidden" id="editingExpenseId">
+          <button class="btn btn-amber btn-block" onclick="saveExpense()">Save expense</button>
+        </div>
+      </div>
+
+      <div class="section-label">Recent expenses</div>
+      <div id="budList"></div>
+    </section>
+
+    <!-- TRIPS -->
+    <section class="screen" id="screen-trips">
+      <p class="card-sub" style="color:var(--muted); margin-bottom:10px;">Weekend & travel ideas with rough cost/time estimates - tap edit to refine once you've priced tickets.</p>
+      <button class="add-toggle" onclick="openTripForm()">+ Add trip idea</button>
+      <div class="form-panel" id="tripForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('tripForm')">✕</button>
+          <div class="field"><label class="f">Destination</label><input id="tripDest" placeholder="Bergamo, Italy"></div>
+          <div class="field"><label class="f">Image URL (optional)</label><input id="tripImg" placeholder="https://..."></div>
+          <div class="photo-row">
+            <label class="filebtn">📷 Upload photo<input type="file" accept="image/*" style="display:none;" onchange="handlePhotoFile(this,'tripPhotoData','tripPhotoPreview')"></label>
+          </div>
+          <input type="hidden" id="tripPhotoData">
+          <img class="photo-preview" id="tripPhotoPreview">
+          <div class="field"><label class="f">Website (booking / info link)</label><input id="tripWebsite" placeholder="https://..."></div>
+          <div class="field"><label class="f">Google Maps link (optional - auto-generated if blank)</label><input id="tripMapsLink" placeholder="https://maps.google.com/..."></div>
+          <div class="field"><label class="f">Starting point (optional, defaults to Prague)</label><input id="tripOrigin" placeholder="Prague, Czech Republic"></div>
+          <div class="field"><label class="f">Possible dates</label><input id="tripDates" placeholder="Oct 3-5 weekend"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Travel cost est. (USD)</label><input type="number" id="tripTravelCost"></div>
+            <div class="field"><label class="f">Housing cost est. (USD)</label><input type="number" id="tripHousingCost"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label class="f">Travel time (hrs)</label><input type="number" id="tripTime" step="0.5"></div>
+            <div class="field"><label class="f">Mode</label><select id="tripMode"><option>Train</option><option>Bus</option><option>Flight</option><option>Car/Rideshare</option></select></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label class="f">Status</label><select id="tripStatus"><option>Idea</option><option>Planned</option><option>Booked</option><option>Done</option></select></div>
+            <div class="field"><label class="f"># splitting cost</label><input type="number" id="tripSplit" placeholder="1"></div>
+          </div>
+          <div class="field"><label class="f">Notes</label><textarea id="tripNotes"></textarea></div>
+          <input type="hidden" id="editingTripId">
+          <button class="btn btn-amber btn-block" onclick="saveTrip()">Save trip idea</button>
+        </div>
+      </div>
+      <div id="tripList"></div>
+    </section>
+
+    <!-- MORE (grid launcher) -->
+    <section class="screen" id="screen-more">
+      <div class="more-grid" id="moreGrid"></div>
+      <div class="form-panel" id="customTabForm" style="margin-top:16px;">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('customTabForm')">✕</button>
+          <h2 class="card-title">New custom checklist tab</h2>
+          <div class="row2">
+            <div class="field"><label class="f">Emoji</label><input id="ctEmoji" placeholder="🎯" maxlength="4"></div>
+            <div class="field"><label class="f">Name</label><input id="ctName" placeholder="Gift List"></div>
+          </div>
+          <button class="btn btn-amber btn-block" onclick="addCustomTab()">Create tab</button>
+        </div>
+      </div>
+      <button class="add-toggle" id="addCustomTabBtn" style="display:none;" onclick="toggleForm('customTabForm')">+ Add custom tab</button>
+    </section>
+
+    <!-- TODO / BUCKET LISTS -->
+    <section class="screen" id="screen-todo">
+      <div id="todoListsSelector" style="display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; margin-bottom:10px;"></div>
+      <button class="add-toggle" onclick="toggleForm('newListForm')">+ New list</button>
+      <div class="form-panel" id="newListForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('newListForm')">✕</button>
+          <input id="newListName" placeholder="e.g. Prague Bucket List">
+          <button class="btn btn-amber btn-block" onclick="addTodoList()">Create list</button>
+        </div>
+      </div>
+      <div class="card" id="todoActiveCard" style="display:none;">
+        <div class="item-top">
+          <h2 class="card-title" id="todoActiveName"></h2>
+          <button class="icon-btn" style="color:var(--rust)" onclick="deleteTodoList()">🗑</button>
+        </div>
+        <div id="todoItems"></div>
+        <div style="display:flex; gap:6px; margin-top:8px;">
+          <input id="todoNewItem" placeholder="Add an item…" style="margin-bottom:0;">
+          <button class="btn btn-amber" onclick="addTodoItem()">Add</button>
+        </div>
+      </div>
+      <div class="empty-msg" id="todoEmpty">No lists yet — create one above.</div>
+    </section>
+
+    <!-- FOOD HUB -->
+    <section class="screen" id="screen-food">
+      <div style="display:flex; gap:6px; margin-bottom:14px;">
+        <button class="btn btn-sm" id="foodTab-tracker" onclick="foodTab('tracker')">Tracker</button>
+        <button class="btn btn-sm" id="foodTab-planner" onclick="foodTab('planner')">Planner</button>
+        <button class="btn btn-sm" id="foodTab-spots" onclick="foodTab('spots')">Spots</button>
+      </div>
+
+      <div id="foodPane-tracker">
+        <button class="add-toggle" onclick="openFoodLogForm()">+ Log a meal</button>
+        <div class="form-panel" id="foodTrackForm">
+          <div class="card">
+            <button class="form-close" onclick="closeForm('foodTrackForm')">✕</button>
+            <div class="row2">
+              <div class="field"><label class="f">Date</label><input type="date" id="ftDate"></div>
+              <div class="field"><label class="f">Meal</label><select id="ftMeal"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option></select></div>
+            </div>
+            <div class="field"><label class="f">Place / dish</label><input id="ftPlace" placeholder="Lokal - svickova"></div>
+            <div class="row2">
+              <div class="field"><label class="f">Cost (CZK)</label><input type="number" id="ftCost"></div>
+              <div class="field"><label class="f">Rating (1-5)</label><input type="number" id="ftRating" min="1" max="5"></div>
+            </div>
+            <input type="hidden" id="editingFoodLogId">
+            <button class="btn btn-amber btn-block" onclick="saveFoodLog()">Save</button>
+          </div>
+        </div>
+        <div id="foodLogList"></div>
+      </div>
+
+      <div id="foodPane-planner" style="display:none;">
+        <button class="add-toggle" onclick="openFoodPlanForm()">+ Plan a meal</button>
+        <div class="form-panel" id="foodPlanForm">
+          <div class="card">
+            <button class="form-close" onclick="closeForm('foodPlanForm')">✕</button>
+            <div class="row2">
+              <div class="field"><label class="f">Date</label><input type="date" id="fpDate"></div>
+              <div class="field"><label class="f">Time</label><input type="time" id="fpTime"></div>
+            </div>
+            <div class="field"><label class="f">Restaurant / idea</label><input id="fpPlace"></div>
+            <div class="field"><label class="f">Est. cost (USD, optional)</label><input type="number" id="fpCost" placeholder="Adds to predicted budget"></div>
+            <div class="field"><label class="f">Notes</label><textarea id="fpNotes" placeholder="Who is coming, reservation info…"></textarea></div>
+            <input type="hidden" id="editingFoodPlanId">
+            <button class="btn btn-amber btn-block" onclick="saveFoodPlan()">Save plan</button>
+          </div>
+        </div>
+        <div id="foodPlanList"></div>
+      </div>
+
+      <div id="foodPane-spots" style="display:none;">
+        <button class="add-toggle" onclick="openSpotForm()">+ Add restaurant</button>
+        <div class="form-panel" id="spotForm">
+          <div class="card">
+            <button class="form-close" onclick="closeForm('spotForm')">✕</button>
+            <div class="field"><label class="f">Name</label><input id="spotName"></div>
+            <div class="photo-row">
+              <label class="filebtn">📷 Upload photo<input type="file" accept="image/*" style="display:none;" onchange="handlePhotoFile(this,'spotPhotoData','spotPhotoPreview')"></label>
+            </div>
+            <input type="hidden" id="spotPhotoData">
+            <img class="photo-preview" id="spotPhotoPreview">
+            <div class="field"><label class="f">Website</label><input id="spotWebsite" placeholder="https://..."></div>
+            <div class="field"><label class="f">Google Maps link (optional)</label><input id="spotMapsLink" placeholder="https://maps.google.com/..."></div>
+            <div class="field"><label class="f">Starting point (optional, defaults to Prague)</label><input id="spotOrigin" placeholder="Prague, Czech Republic"></div>
+            <div class="row2">
+              <div class="field"><label class="f">Cuisine</label><input id="spotCuisine" placeholder="Czech, ramen, kebab…"></div>
+              <div class="field"><label class="f">Price</label><select id="spotPrice"><option>$</option><option>$$</option><option>$$$</option></select></div>
+            </div>
+            <div class="field"><label class="f">Status</label><select id="spotVisited"><option value="0">Want to visit</option><option value="1">Visited</option></select></div>
+            <div class="field"><label class="f">Rating (if visited)</label><input type="number" id="spotRating" min="1" max="5"></div>
+            <div class="field"><label class="f">Notes</label><textarea id="spotNotes"></textarea></div>
+            <input type="hidden" id="editingSpotId">
+            <button class="btn btn-amber btn-block" onclick="saveSpot()">Save spot</button>
+          </div>
+        </div>
+        <div id="spotList"></div>
+      </div>
+    </section>
+
+    <!-- PLACES -->
+    <section class="screen" id="screen-places">
+      <div style="display:flex; gap:6px; margin-bottom:14px;">
+        <button class="btn btn-sm" id="placeTab-want" onclick="placeTab('want')">Want to visit</button>
+        <button class="btn btn-sm" id="placeTab-visited" onclick="placeTab('visited')">Visited</button>
+      </div>
+      <button class="add-toggle" onclick="openPlaceForm()">+ Add place</button>
+      <div class="form-panel" id="placeForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('placeForm')">✕</button>
+          <div class="field"><label class="f">Name</label><input id="placeName" placeholder="Prague Castle"></div>
+          <div class="photo-row">
+            <label class="filebtn">📷 Upload photo<input type="file" accept="image/*" style="display:none;" onchange="handlePhotoFile(this,'placePhotoData','placePhotoPreview')"></label>
+          </div>
+          <input type="hidden" id="placePhotoData">
+          <img class="photo-preview" id="placePhotoPreview">
+          <div class="field"><label class="f">Image URL (optional)</label><input id="placeImg" placeholder="https://..."></div>
+          <div class="field"><label class="f">Website</label><input id="placeWebsite" placeholder="https://..."></div>
+          <div class="field"><label class="f">Google Maps link (optional)</label><input id="placeMapsLink" placeholder="https://maps.google.com/..."></div>
+          <div class="field"><label class="f">Starting point (optional, defaults to Prague)</label><input id="placeOrigin" placeholder="Prague, Czech Republic"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Category</label><select id="placeCat"><option>Landmark</option><option>Museum</option><option>Park/Nature</option><option>Day trip</option><option>Nightlife</option><option>Other</option></select></div>
+            <div class="field"><label class="f">Status</label><select id="placeVisited"><option value="0">Want to visit</option><option value="1">Visited</option></select></div>
+          </div>
+          <div class="field"><label class="f">Rating (if visited)</label><input type="number" id="placeRating" min="1" max="5"></div>
+          <div class="field"><label class="f">Notes</label><textarea id="placeNotes"></textarea></div>
+          <input type="hidden" id="editingPlaceId">
+          <button class="btn btn-amber btn-block" onclick="savePlace()">Save place</button>
+        </div>
+      </div>
+      <div id="placeList"></div>
+    </section>
+
+    <!-- PACKING -->
+    <section class="screen" id="screen-packing">
+      <p class="card-sub" style="color:var(--muted); margin-bottom:10px;">Pre-loaded for a 4-month semester with a cold Prague winter + Tatras skiing. Check off as you pack, add your own.</p>
+      <div style="display:flex; gap:6px; margin-bottom:12px;">
+        <input id="packNewItem" placeholder="Add item…">
+        <select id="packNewCat" style="max-width:120px;">
+          <option>Documents</option><option>Clothing</option><option>Winter Gear</option><option>Electronics</option><option>Toiletries</option><option>Misc</option>
+        </select>
+        <button class="btn btn-amber" onclick="addPackItem()">Add</button>
+      </div>
+      <div id="packList"></div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="screen" id="screen-journal">
+      <button class="add-toggle" onclick="openJournalForm()">+ New entry</button>
+      <div class="form-panel" id="journalForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('journalForm')">✕</button>
+          <div class="row2">
+            <div class="field"><label class="f">Date</label><input type="date" id="jDate"></div>
+            <div class="field"><label class="f">Mood</label><select id="jMood"><option>😄</option><option>🙂</option><option>😐</option><option>😩</option><option>🤯</option><option>🥶</option></select></div>
+          </div>
+          <div class="field"><label class="f">Title</label><input id="jTitle" placeholder="First Sparta game"></div>
+          <div class="field"><label class="f">Entry</label><textarea id="jText" style="min-height:110px;"></textarea></div>
+          <input type="hidden" id="editingJournalId">
+          <button class="btn btn-amber btn-block" onclick="saveJournal()">Save entry</button>
+        </div>
+      </div>
+      <div id="journalList"></div>
+    </section>
+
+    <!-- PHRASEBOOK -->
+    <section class="screen" id="screen-phrasebook">
+      <div class="card">
+        <div class="card-title">Google Translate</div>
+        <p class="card-sub">Use the embedded translator when available, or open Google's full translator for text and camera/image translation.</p>
+        <div id="google_translate_element" style="margin:10px 0;"></div>
+        <div class="field">
+          <label class="f">Quick text translation</label>
+          <textarea id="quickTranslateText" placeholder="Type English or Czech here…" style="min-height:85px;"></textarea>
+        </div>
+        <div style="display:flex;gap:7px;flex-wrap:wrap;">
+          <button class="btn btn-amber" onclick="openGoogleTranslate()">Translate text</button>
+          <label class="btn btn-outline" style="text-align:center;">📷 Camera / image<input id="translateCameraInput" type="file" accept="image/*" capture="environment" style="display:none;" onchange="previewTranslateImage(this)"></label>
+          <button class="btn btn-outline" onclick="openGoogleImageTranslate()">Open Google camera/image translator</button>
+        </div>
+        <img id="translateImagePreview" style="display:none;width:100%;max-height:280px;object-fit:contain;border-radius:10px;margin-top:10px;">
+      </div>
+      <input id="phraseSearch" placeholder="Search phrases…" oninput="renderPhrasebook()">
+      <div id="phraseList" style="margin-top:6px;"></div>
+    </section>
+
+    <!-- EMERGENCY -->
+    <section class="screen" id="screen-emergency">
+      <div class="card card-dark">
+        <h2 class="card-title" style="color:var(--paper)">Czech emergency numbers</h2>
+        <div style="margin-top:6px; font-size:13.5px; line-height:1.9;">
+          <div><span class="tag" style="background:var(--rust);">112</span> General emergency (EU-wide)</div>
+          <div><span class="tag" style="background:var(--rust);">155</span> Ambulance</div>
+          <div><span class="tag" style="background:var(--rust);">158</span> Police</div>
+          <div><span class="tag" style="background:var(--rust);">150</span> Fire</div>
+        </div>
+      </div>
+      <div class="section-label">My info (editable, stays on this device)</div>
+      <div class="card">
+        <div class="field"><label class="f">US Embassy Prague</label><textarea id="emEmbassy" oninput="saveEmergency()"></textarea></div>
+        <div class="field"><label class="f">Insurance provider & policy #</label><input id="emInsurance" oninput="saveEmergency()"></div>
+        <div class="field"><label class="f">ISIC / ESN card #</label><input id="emIsic" oninput="saveEmergency()"></div>
+        <div class="field"><label class="f">Passport # (last 4 only recommended)</label><input id="emPassport" oninput="saveEmergency()"></div>
+        <div class="field"><label class="f">Home emergency contact</label><textarea id="emContact" oninput="saveEmergency()" placeholder="Name, relationship, phone, email"></textarea></div>
+      </div>
+    </section>
+
+    <!-- TRANSIT -->
+    <section class="screen" id="screen-transit">
+      <div class="card">
+        <label class="f">90-day transit pass start date</label>
+        <input type="date" id="transitStart" oninput="saveTransit()">
+        <div class="bar-row" style="margin-top:14px;">
+          <div class="blabel"><span id="transitDaysLeft">—</span><span id="transitEndDate"></span></div>
+          <div class="bar-track"><div class="bar-fill" id="transitBar" style="width:0%; background:var(--amber);"></div></div>
+        </div>
+      </div>
+      <p class="card-sub" style="color:var(--muted);">Reminder: buy your next pass or single tickets before this one expires - Prague inspectors do fine on the spot.</p>
+    </section>
+
+    <!-- CLASSES -->
+    <section class="screen" id="screen-classes">
+      <button class="add-toggle" onclick="openClassForm()">+ Add class</button>
+      <div class="form-panel" id="classForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('classForm')">✕</button>
+          <div class="field"><label class="f">Course name</label><input id="clName" placeholder="Intro to Mechanical Design"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Days</label><input id="clDays" placeholder="Mon/Wed"></div>
+            <div class="field"><label class="f">Time</label><input id="clTime" placeholder="10:00-11:30"></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label class="f">Room</label><input id="clRoom"></div>
+            <div class="field"><label class="f">Professor</label><input id="clProf"></div>
+          </div>
+          <div class="field"><label class="f">Notes</label><textarea id="clNotes"></textarea></div>
+          <input type="hidden" id="editingClassId">
+          <button class="btn btn-amber btn-block" onclick="saveClass()">Save class</button>
+        </div>
+      </div>
+      <div id="classList"></div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="screen" id="screen-contacts">
+      <button class="add-toggle" onclick="openContactForm()">+ Add contact</button>
+      <div class="form-panel" id="contactForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('contactForm')">✕</button>
+          <div class="field"><label class="f">Name</label><input id="ctcName"></div>
+          <div class="row2">
+            <div class="field"><label class="f">Category</label><select id="ctcCat"><option>Roommate</option><option>Classmate</option><option>Local friend</option><option>Family</option><option>Program staff</option><option>Other</option></select></div>
+            <div class="field"><label class="f">Phone / social</label><input id="ctcPhone"></div>
+          </div>
+          <div class="field"><label class="f">Notes</label><textarea id="ctcNotes"></textarea></div>
+          <input type="hidden" id="editingContactId">
+          <button class="btn btn-amber btn-block" onclick="saveContact()">Save contact</button>
+        </div>
+      </div>
+      <div id="contactList"></div>
+    </section>
+
+    <!-- LINK VAULT -->
+    <section class="screen" id="screen-links">
+      <p class="card-sub" style="color:var(--muted); margin-bottom:10px;">Flight confirmations, housing lease, visa portal, insurance, ESN membership — anything you need a link for.</p>
+      <button class="add-toggle" onclick="openLinkForm()">+ Add link</button>
+      <div class="form-panel" id="linkForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('linkForm')">✕</button>
+          <div class="field"><label class="f">Name</label><input id="lnkName" placeholder="Flight confirmation - PRG"></div>
+          <div class="field"><label class="f">URL</label><input id="lnkUrl" placeholder="https://..."></div>
+          <div class="field"><label class="f">Notes</label><textarea id="lnkNotes"></textarea></div>
+          <input type="hidden" id="editingLinkId">
+          <button class="btn btn-amber btn-block" onclick="saveLink()">Save link</button>
+        </div>
+      </div>
+      <div id="linkList"></div>
+    </section>
+
+    <!-- CASH TRACKER -->
+    <section class="screen" id="screen-cash">
+      <div class="card">
+        <div class="lbl mono" style="font-size:10px; color:#7a6f52; text-transform:uppercase;">Estimated cash on hand</div>
+        <div class="val" style="font-family:'Fraunces',serif; font-size:26px;" id="cashOnHand">0 Kc</div>
+      </div>
+      <button class="add-toggle" onclick="openCashForm()">+ Log ATM withdrawal</button>
+      <div class="form-panel" id="cashForm">
+        <div class="card">
+          <button class="form-close" onclick="closeForm('cashForm')">✕</button>
+          <div class="row2">
+            <div class="field"><label class="f">Date</label><input type="date" id="cshDate"></div>
+            <div class="field"><label class="f">Amount withdrawn (CZK)</label><input type="number" id="cshAmt"></div>
+          </div>
+          <div class="field"><label class="f">ATM fee (CZK)</label><input type="number" id="cshFee"></div>
+          <div class="field"><label class="f">Notes</label><input id="cshNotes"></div>
+          <input type="hidden" id="editingCashId">
+          <button class="btn btn-amber btn-block" onclick="saveCash()">Save withdrawal</button>
+        </div>
+      </div>
+      <div id="cashList"></div>
+    </section>
+
+    <!-- CUSTOM TAB (generic, reused) -->
+    <section class="screen" id="screen-customtab">
+      <div id="customTabItems"></div>
+      <div style="display:flex; gap:6px; margin-top:10px;">
+        <input id="customTabNewItem" placeholder="Add an item…" style="margin-bottom:0;">
+        <button class="btn btn-amber" onclick="addCustomTabItem()">Add</button>
+      </div>
+    </section>
+
+    <!-- SETTINGS / ADMIN -->
+    <section class="screen" id="screen-settings">
+      <div class="card">
+        <div class="toggle-row">
+          <div><h2 class="card-title" style="font-size:15px;">Admin / Edit Mode</h2><p class="card-sub">Shows edit controls everywhere and unlocks category & tab management.</p></div>
+          <label class="switch"><input type="checkbox" id="editModeToggle" onchange="toggleEditMode()"><span class="slider"></span></label>
+        </div>
+      </div>
+
+      <div class="section-label">Full visual editor</div>
+      <div class="card">
+        <p class="card-sub">Turn on Edit Mode, then click any box/card/tile on any page. Drag it directly or use the controls below. Changes are saved per element and override the theme only for that element.</p>
+        <div class="ve-actions" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">
+          <button class="btn btn-outline" onclick="toggleVisualEditor(true)">Open visual editor</button>
+          <button class="btn btn-outline" onclick="clearVisualOverrides()">Reset all visual edits</button>
+        </div>
+      </div>
+
+      <div class="section-label">Currency</div>
+      <div class="card">
+        <label class="f">USD to CZK rate</label>
+        <input type="number" id="settingsFxRate" oninput="saveFxRateSettings()">
+      </div>
+
+      <div class="section-label">Directions default</div>
+      <div class="card">
+        <label class="f">Default starting point for routes</label>
+        <input id="settingsHomeBase" oninput="saveHomeBase()" placeholder="Prague, Czech Republic">
+        <p class="card-sub">Used for the Walk/Transit/Drive maps on trips, places, restaurants, and events — unless you set a specific starting point on that item.</p>
+      </div>
+
+      <div class="section-label">Google Maps (optional, for live routes)</div>
+      <div class="card">
+        <p class="card-sub" style="margin-bottom:8px;">Paste your own <b>restricted</b> Maps JavaScript API key to get real interactive routes with live traffic. Leave blank to use the basic no-key map (still shows a route, just less polished). Restrict the key in Google Cloud Console to your hosting domain and to the Maps JavaScript + Directions APIs.</p>
+        <input id="settingsMapsKey" placeholder="AIza...">
+        <button class="btn btn-outline btn-block" onclick="saveMapsKey()">Save & reload</button>
+      </div>
+
+      <div class="section-label">Budget categories</div>
+      <div class="card">
+        <div id="budgetCatManager"></div>
+        <div style="display:flex; gap:6px; margin-top:8px;">
+          <input id="newBudgetCat" placeholder="New category" style="margin-bottom:0;">
+          <button class="btn btn-amber" onclick="addBudgetCategory()">Add</button>
+        </div>
+      </div>
+
+      <div class="section-label">Event categories</div>
+      <div class="card">
+        <div id="eventCatManager"></div>
+        <div style="display:flex; gap:6px; margin-top:8px;">
+          <input id="newEventCatName" placeholder="Name" style="margin-bottom:0;">
+          <input type="color" id="newEventCatColor" value="#6FC7D6" style="width:44px; padding:2px; margin-bottom:0;">
+          <button class="btn btn-amber" onclick="addEventCategory()">Add</button>
+        </div>
+      </div>
+
+      <div class="section-label">Theme</div>
+      <div class="card">
+        <div id="themeSwatches"></div>
+      </div>
+
+      
+      <div class="section-label">Create theme</div>
+
+<div class="card">
+  <div class="field">
+    <label class="f">Theme name</label>
+    <input id="customThemeName" placeholder="My Prague Night theme">
+  </div>
+
+  <div class="row2">
+    <div class="field">
+      <label class="f">Deep background</label>
+      <input type="color" id="customThemeNavyDeep" oninput="previewCustomTheme()" value="#0A1626">
+    </div>
+
+    <div class="field">
+      <label class="f">Card background</label>
+      <input type="color" id="customThemeNavyCard" oninput="previewCustomTheme()" value="#152840">
+    </div>
+
+    <div class="field">
+      <label class="f">Accent</label>
+      <input type="color" id="customThemeAmber" oninput="previewCustomTheme()" value="#E8A33D">
+    </div>
+
+    <div class="field">
+      <label class="f">Secondary accent</label>
+      <input type="color" id="customThemeCyan" oninput="previewCustomTheme()" value="#6FC7D6">
+    </div>
+
+    <div class="field">
+      <label class="f">Alert / warm accent</label>
+      <input type="color" id="customThemeRust" oninput="previewCustomTheme()" value="#C1592F">
+    </div>
+  </div>
+
+  <div id="customThemePreviewLabel" class="card-sub" style="margin:8px 0;">Live preview — change a color to preview it instantly.</div>
+  <button class="btn btn-amber btn-block" onclick="saveCustomTheme()">
+    Save custom theme
+  </button>
+</div>
+
+
+
+
+
+      
+      <div class="section-label">Custom logo</div>
+      <div class="card">
+        <p class="card-sub" style="margin-bottom:10px;">Shows in the top bar next to "Praha HQ".</p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img id="logoBigPreview" style="width:52px;height:52px;border-radius:12px;object-fit:cover;display:none;">
+          <label class="btn btn-outline" style="flex:1; text-align:center;">Upload logo<input type="file" accept="image/*" style="display:none;" onchange="handleLogoUpload(this)"></label>
+          <button class="icon-btn" style="color:var(--rust)" onclick="clearLogo()">Clear</button>
+        </div>
+      </div>
+
+      <div class="section-label">Reorder "More" tiles</div>
+      <div class="card"><p class="card-sub">Turn on Edit Mode above, then use the ▲▼ arrows on each tile in the More tab.</p></div>
+
+      <div class="section-label">More-tab visibility</div>
+      <div class="card"><div id="tileVisManager"></div></div>
+
+      <div class="section-label">Data backup</div>
+      <div class="card">
+        <p class="card-sub" style="margin-bottom:10px;">Everything lives on this device. Export a backup occasionally, or import one on a new device.</p>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-outline btn-block" onclick="exportData()">⬇ Export JSON</button>
+          <label class="btn btn-outline btn-block" style="text-align:center;">⬆ Import JSON<input type="file" accept="application/json" style="display:none;" onchange="importData(this)"></label>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav id="bottomnav">
+    <button class="navbtn active" data-tab="dashboard" onclick="switchTab('dashboard')"><span class="ic">🏠</span>Home</button>
+    <button class="navbtn" data-tab="calendar" onclick="switchTab('calendar')"><span class="ic">📅</span>Calendar</button>
+    <button class="navbtn" data-tab="budget" onclick="switchTab('budget')"><span class="ic">💰</span>Budget</button>
+    <button class="navbtn" data-tab="trips" onclick="switchTab('trips')"><span class="ic">✈️</span>Trips</button>
+    <button class="navbtn" data-tab="more" onclick="switchTab('more')"><span class="ic">🧭</span>More</button>
+  </nav>
+</div>
+
+<script>
+
+
+
+function hexValue(id) {
+  const value = document.getElementById(id).value.trim().replace("#", "").toUpperCase();
+  return /^[0-9A-F]{6}$/.test(value) ? value : null;
+}
+
+function previewCustomTheme(){
+  const colors = {
+    navyDeep: document.getElementById('customThemeNavyDeep')?.value,
+    navyCard: document.getElementById('customThemeNavyCard')?.value,
+    amber: document.getElementById('customThemeAmber')?.value,
+    cyan: document.getElementById('customThemeCyan')?.value,
+    rust: document.getElementById('customThemeRust')?.value
+  };
+  if(!colors.navyDeep) return;
+  const root = document.documentElement;
+  root.style.setProperty('--navy-deep', colors.navyDeep);
+  root.style.setProperty('--navy-card', colors.navyCard);
+  root.style.setProperty('--amber', colors.amber);
+  root.style.setProperty('--cyan', colors.cyan);
+  root.style.setProperty('--rust', colors.rust);
+  root.style.setProperty('--navy', colors.navyDeep);
+  const label = document.getElementById('customThemePreviewLabel');
+  if(label) label.textContent = 'Live preview — changes are not saved until you click Save custom theme.';
+}
+
+function saveCustomTheme() {
+  const name = document.getElementById("customThemeName").value.trim();
+
+  if (!name) {
+    alert("Give your theme a name.");
+    return;
+  }
+
+  const theme = {
+    key: `custom-${uid()}`,
+    label: name,
+    navyDeep: hexValue("customThemeNavyDeep"),
+    navyCard: hexValue("customThemeNavyCard"),
+    amber: hexValue("customThemeAmber"),
+    cyan: hexValue("customThemeCyan"),
+    rust: hexValue("customThemeRust")
+  };
+
+  if(Object.values(theme).some(function(v){ return v === null; })){
+    alert("Please enter a valid 6-digit hex color in every color field.");
+    return;
+  }
+
+  DB.settings.customThemes = DB.settings.customThemes || [];
+  DB.settings.customThemes.push(theme);
+  DB.settings.theme = theme.key;
+
+  persist("settings");
+  applyTheme(theme.key);
+  renderSettings();
+}
+
+function deleteCustomTheme(key) {
+  DB.settings.customThemes = (DB.settings.customThemes || [])
+    .filter(theme => theme.key !== key);
+
+  if (DB.settings.theme === key) {
+    DB.settings.theme = "blueprint";
+    applyTheme("blueprint");
+  }
+
+  persist("settings");
+  renderSettings();
+}
+
+
+
+/* ============ STORAGE LAYER ============ */
+const DEFAULT_EVENT_CATS = {
+  class:{label:'Class', color:'#5C9C6C'},
+  travel:{label:'Travel', color:'#6FC7D6'},
+  social:{label:'Social', color:'#E8A33D'},
+  deadline:{label:'Deadline', color:'#C1592F'},
+  other:{label:'Other', color:'#8CA0B3'}
+};
+const DEFAULT_BUDGET_CATS = ['Housing','Food','Travel','Nightlife','Transit','School','Shopping','Other'];
+const DEFAULT_HIDDEN_TILES = [];
+
+const DEFAULTS = {
+  settings: { fxRate: 21.5, programStart: '2026-08-30', programEnd: '2026-12-19', name: 'James', editMode:false,
+    budgetCategories: DEFAULT_BUDGET_CATS.slice(), eventCategories: JSON.parse(JSON.stringify(DEFAULT_EVENT_CATS)),
+    hiddenTiles: DEFAULT_HIDDEN_TILES.slice(), transitStart:'', homeBase:'Prague, Czech Republic', theme:'blueprint', logoImg:'', tileOrder:null, mapsApiKey:'' },
+  events: [
+    {id:'e1', title:'Move-in / Orientation', date:'2026-08-30', time:'09:00', cat:'other', notes:'UNYP Prague — NUin program start', cost:0, link:''},
+    {id:'e2', title:'Program ends', date:'2026-12-19', time:'', cat:'deadline', notes:'Fly home / next stop', cost:0, link:''}
+  ],
+  budgetGoal: 800,
+  expenses: [],
+  trips: [
+    {id:'t1', dest:'Bergamo & Lake Orta, Italy', img:'https://images.unsplash.com/photo-1548262744-90dc0e3ee9de?w=800&q=60', dates:'Long weekend', travelCost:120, housingCost:0, time:2, mode:'Flight', status:'Idea', notes:'Family is near Milan — cheap Ryanair/Wizz route likely. Housing free if staying with family.', website:'', mapsLink:'', split:1},
+    {id:'t2', dest:'Vienna, Austria', img:'https://images.unsplash.com/photo-1516550893923-42d28e5677af?w=800&q=60', dates:'Weekend', travelCost:35, housingCost:60, time:4, mode:'Train', status:'Idea', notes:'RegioJet/FlixBus or direct rail, ~4hrs.', website:'', mapsLink:'', split:1},
+    {id:'t3', dest:'Budapest, Hungary', img:'https://images.unsplash.com/photo-1541343672885-9be56236302a?w=800&q=60', dates:'Weekend', travelCost:30, housingCost:80, time:7, mode:'Train', status:'Idea', notes:'Long but scenic train, or a cheap overnight FlixBus.', website:'', mapsLink:'', split:1},
+    {id:'t4', dest:'Krakow, Poland', img:'https://images.unsplash.com/photo-1592912179516-6c4e5db72273?w=800&q=60', dates:'Weekend', travelCost:25, housingCost:60, time:8, mode:'Bus', status:'Idea', notes:'FlixBus is the budget move.', website:'', mapsLink:'', split:1},
+    {id:'t5', dest:'High Tatras, Slovakia (skiing)', img:'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=800&q=60', dates:'Winter break window', travelCost:45, housingCost:150, time:6, mode:'Train', status:'Idea', notes:'Ski pass + rental gear budget separately, roughly $50-70/day.', website:'', mapsLink:'', split:1},
+    {id:'t6', dest:'Berlin, Germany', img:'https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=60', dates:'Weekend', travelCost:30, housingCost:70, time:4.5, mode:'Bus', status:'Idea', notes:'FlixBus direct, budget-friendly.', website:'', mapsLink:'', split:1}
+  ],
+  customThemes: [],
+  todoLists: [
+    {id:'l1', name:'Prague Bucket List', items:[
+      {id:'i1', text:'See Prague Castle at sunrise', done:false},
+      {id:'i2', text:'Catch an HC Sparta Praha game', done:false},
+      {id:'i3', text:'Cross Charles Bridge before 7am (no crowds)', done:false},
+      {id:'i4', text:'Day trip to Cesky Krumlov', done:false},
+      {id:'i5', text:'Try Aperol Spritz at a riverside bar', done:false}
+    ]}
+  ],
+  foodLog: [],
+  foodPlans: [],
+  spots: [
+    {id:'s1', name:'Lokal', cuisine:'Traditional Czech', price:'$$', visited:false, rating:0, notes:'Classic svickova + Pilsner straight from the tank.', website:'', mapsLink:'', img:''},
+    {id:'s2', name:'Cafe Savoy', cuisine:'Czech / Cafe', price:'$$$', visited:false, rating:0, notes:'Gorgeous ceiling, good for a treat-yourself brunch.', website:'', mapsLink:'', img:''}
+  ],
+  places: [
+    {id:'p1', name:'Prague Castle', cat:'Landmark', img:'https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=60', visited:false, rating:0, notes:'', website:'', mapsLink:''},
+    {id:'p2', name:'Charles Bridge', cat:'Landmark', img:'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&q=60', visited:false, rating:0, notes:'', website:'', mapsLink:''},
+    {id:'p3', name:'Petrin Hill', cat:'Park/Nature', img:'https://images.unsplash.com/photo-1592906209472-a67f5b943ce7?w=800&q=60', visited:false, rating:0, notes:'Mini Eiffel Tower + funicular.', website:'', mapsLink:''},
+    {id:'p4', name:'Astronomical Clock', cat:'Landmark', img:'https://images.unsplash.com/photo-1592906209472-a67f5b943ce7?w=800&q=60', visited:false, rating:0, notes:'', website:'', mapsLink:''}
+  ],
+  packing: [
+    {id:'k1', text:'Passport + photocopy', cat:'Documents', done:false},
+    {id:'k2', text:'Visa/residence permit paperwork', cat:'Documents', done:false},
+    {id:'k3', text:'ISIC/ESN card', cat:'Documents', done:false},
+    {id:'k4', text:'Insurance card', cat:'Documents', done:false},
+    {id:'k5', text:'Heavy winter coat', cat:'Winter Gear', done:false},
+    {id:'k6', text:'Waterproof boots', cat:'Winter Gear', done:false},
+    {id:'k7', text:'Thermal base layers', cat:'Winter Gear', done:false},
+    {id:'k8', text:'Gloves + beanie', cat:'Winter Gear', done:false},
+    {id:'k9', text:'Universal EU power adapter', cat:'Electronics', done:false},
+    {id:'k10', text:'Portable charger', cat:'Electronics', done:false},
+    {id:'k11', text:'Laptop + charger', cat:'Electronics', done:false},
+    {id:'k12', text:'Everyday walking shoes', cat:'Clothing', done:false},
+    {id:'k13', text:'Toiletries (travel size)', cat:'Toiletries', done:false},
+    {id:'k14', text:'Prescription meds + copies of scripts', cat:'Toiletries', done:false},
+    {id:'k15', text:'Daypack for weekend trips', cat:'Misc', done:false}
+  ],
+  journal: [],
+  emergency: { embassy:'Trziste 15, 118 01 Praha 1 - Mala Strana\nTel +420 257 022 000 (from CZ) / +420 257 022 911 (after-hours emergency)', insurance:'', isic:'', passport:'', contact:'' },
+  classes: [],
+  contacts: [],
+  links: [],
+  cashLog: [],
+  customTabs: []
+};
+
+const EXTRA_PHRASES = [["Dobrý večer", "Good evening", "DOH-bree VEH-cher"], ["Dobrou noc", "Good night", "DOH-broh nots"], ["Na shledanou", "Goodbye / See you", "nah SKHLEH-dah-noh"], ["Mějte se hezky", "Have a nice day / Take care", "MYEY-teh seh HEZ-kee"], ["Jak se máte?", "How are you? (formal)", "yahk seh MAH-teh"], ["Jak se máš?", "How are you? (informal)", "yahk seh MASH"], ["Mám se dobře", "I am doing well", "mahm seh DOH-bzheh"], ["Nerozumím", "I don't understand", "NEH-roh-zoo-meem"], ["Mluvíte anglicky?", "Do you speak English?", "MLOO-vee-teh AHNG-lits-kee"], ["Mluvím trochu česky", "I speak a little Czech", "MLOO-veem TROH-khoo CHES-kee"], ["Můžete to zopakovat?", "Can you repeat that?", "MOO-zheh-teh toh ZOH-pah-koh-vaht"], ["Pomaleji, prosím", "More slowly, please", "POH-mah-leh-yee PROH-seem"], ["Co to znamená?", "What does that mean?", "tsoh toh ZNAH-meh-nah"], ["Jak se to řekne česky?", "How do you say that in Czech?", "yahk seh toh RZHEHK-neh CHES-kee"], ["Můžete mi pomoct?", "Can you help me?", "MOO-zheh-teh mee POH-mohts"], ["Potřebuji pomoc", "I need help", "POH-trzheh-boo-yee POH-mots"], ["Kde je…?", "Where is…?", "gdeh yeh"], ["Jak se tam dostanu?", "How do I get there?", "yahk seh tahm DOH-stah-noo"], ["Kde je metro?", "Where is the metro?", "gdeh yeh MEH-troh"], ["Kde je tramvaj?", "Where is the tram?", "gdeh yeh TRAHM-vye"], ["Kde je nádraží?", "Where is the train station?", "gdeh yeh NAH-drah-zhee"], ["Kde je zastávka?", "Where is the stop?", "gdeh yeh ZAH-stahv-kah"], ["Jízdenka", "Ticket", "YEEZ-den-kah"], ["Jedna jízdenka, prosím", "One ticket, please", "YED-nah YEEZ-den-kah PROH-seem"], ["Kolik stojí jízdenka?", "How much is the ticket?", "KOH-lik STOH-yee YEEZ-den-kah"], ["Kdy to jede?", "When does it leave?", "gdee toh YEH-deh"], ["Je to daleko?", "Is it far?", "yeh toh DAH-leh-koh"], ["Doleva", "To the left", "DOH-leh-vah"], ["Doprava", "To the right", "DOH-prah-vah"], ["Rovně", "Straight ahead", "ROHV-nyeh"], ["Tady", "Here", "TAH-dee"], ["Tam", "There", "tahm"], ["Vchod", "Entrance", "FKHOD"], ["Východ", "Exit", "VEE-khod"], ["Otevřeno", "Open", "OH-teh-vzheh-noh"], ["Zavřeno", "Closed", "ZAH-vzheh-noh"], ["Pozor", "Caution / Watch out", "POH-zor"], ["Pomoc!", "Help!", "POH-mots"], ["Lékárna", "Pharmacy", "LEH-kahr-nah"], ["Nemocnice", "Hospital", "NEH-mots-nee-tseh"], ["Restaurace", "Restaurant", "reh-stow-rah-tseh"], ["Kavárna", "Café", "kah-VAHR-nah"], ["Účet, prosím", "The bill, please", "OO-chet PROH-seem"], ["Menu, prosím", "Menu, please", "MEH-noo PROH-seem"], ["Vodu, prosím", "Water, please", "VOH-doo PROH-seem"], ["Kávu, prosím", "Coffee, please", "KAH-voo PROH-seem"], ["Pivo, prosím", "Beer, please", "PEE-vo PROH-seem"], ["Bez masa", "Without meat", "bez MAH-sah"], ["Jsem vegetarián", "I am vegetarian", "ysem veh-geh-tah-ree-AHN"], ["Mám alergii na…", "I am allergic to…", "mahm ah-lehr-GHEE nah"], ["Je to pálivé?", "Is it spicy?", "yeh toh PAH-lee-veh"], ["Je to sladké?", "Is it sweet?", "yeh toh SLAHT-keh"], ["Je to možné?", "Is it possible?", "yeh toh MOHZH-neh"], ["Můžu platit kartou?", "Can I pay by card?", "MOO-zhoo PLAH-tit KAR-toh"], ["Hotově, prosím", "Cash, please", "HOH-toh-vyeh PROH-seem"], ["Účtenku, prosím", "Receipt, please", "OOT-chehn-koo PROH-seem"], ["Kolik to stojí?", "How much does it cost?", "KOH-lik toh STOH-yee"], ["Máte Wi-Fi?", "Do you have Wi-Fi?", "MAH-teh VEE-fye"], ["Heslo", "Password", "HES-loh"], ["To je dobré", "That is good", "toh yeh DOH-breh"], ["To je skvělé", "That is great", "toh yeh SKVYEH-leh"], ["Líbí se mi to", "I like it", "LEE-bee seh mee toh"], ["Nelíbí se mi to", "I don't like it", "NEH-lee-bee seh mee toh"], ["Mám rád…", "I like… (masculine speaker)", "mahm raht"], ["Mám ráda…", "I like… (feminine speaker)", "mahm RAH-dah"], ["Prosím vás", "Excuse me / Please", "PROH-seem vahs"], ["Promiňte", "Excuse me / Sorry", "PROH-min-tyeh"], ["Všechno v pořádku", "Everything is okay", "FSHEKH-noh f POH-rzhaht-koo"], ["Samozřejmě", "Of course", "SAH-moh-zrhey-myeh"], ["Možná", "Maybe", "MOHZH-nah"], ["Teď", "Now", "ted"], ["Dnes", "Today", "dnes"], ["Zítra", "Tomorrow", "ZEE-trah"], ["Včera", "Yesterday", "FCHER-ah"], ["Ráno", "Morning", "RAH-noh"], ["Odpoledne", "Afternoon", "OT-poh-led-neh"], ["Večer", "Evening", "VEH-cher"], ["Dnes večer", "Tonight", "dnes VEH-cher"], ["Kolik je hodin?", "What time is it?", "KOH-lik yeh HOH-din"], ["V kolik hodin?", "At what time?", "f KOH-lik HOH-din"], ["Číslo", "Number", "CHEES-loh"], ["Adresa", "Address", "AH-dreh-sah"], ["Telefon", "Phone", "TEH-leh-fohn"], ["Pomocník", "Helper", "POH-mots-neek"], ["Kamarád", "Friend (male)", "KAH-mah-raht"], ["Kamarádka", "Friend (female)", "KAH-mah-raht-kah"], ["Škola", "School", "SHKOH-lah"], ["Univerzita", "University", "OO-nee-ver-ZEE-tah"], ["Třída", "Classroom / class", "TRZHEE-dah"], ["Učitel", "Teacher (male)", "OO-chee-tel"], ["Učitelka", "Teacher (female)", "OO-chee-tel-kah"], ["Knihovna", "Library", "KNEE-hov-nah"], ["Obchod", "Shop / store", "OHB-khod"], ["Supermarket", "Supermarket", "SOO-pehr-mar-ket"], ["Toalety", "Restrooms", "toh-ah-LEH-tih"], ["Klíče", "Keys", "KLEE-cheh"], ["Pokoj", "Room", "POH-koy"], ["Bydlení", "Housing / accommodation", "BIHD-leh-nee"], ["Letiště", "Airport", "LEH-teesh-tyeh"], ["Let", "Flight", "let"], ["Pas", "Passport", "pas"], ["Zavazadlo", "Luggage", "ZAH-vah-zad-loh"], ["Jsem z USA", "I am from the USA", "ysem z oo-ES-ah"], ["Studuji v Praze", "I study in Prague", "STOO-doo-yee f PRAH-zeh"], ["Jsem student", "I am a student (male)", "ysem STOO-dent"], ["Jsem studentka", "I am a student (female)", "ysem STOO-dent-kah"], ["Těší mě", "Nice to meet you", "TYEH-shee mnyeh"], ["Na zdraví!", "Cheers!", "nah ZDRAH-vee"], ["Dobrou chuť!", "Enjoy your meal!", "DOH-broh khoot"], ["Šťastnou cestu!", "Have a good trip!", "SHTYAST-noh TSEH-stoo"]];
+const PHRASES = [
+  ['Ahoj','Hi / Bye (informal)','AH-hoy'],
+  ['Dobry den','Hello (formal)','DOH-bree den'],
+  ['Prosim','Please / You are welcome','PROH-seem'],
+  ['Dekuji','Thank you','DYEH-koo-yi'],
+  ['Ano / Ne','Yes / No','AH-no / neh'],
+  ['Prominte','Excuse me / Sorry','PROH-min-teh'],
+  ['Kolik to stoji?','How much does it cost?','KOH-lik toh STOH-yee'],
+  ['Kde je zachod?','Where is the bathroom?','g-deh yeh ZAH-khod'],
+  ['Nerozumim','I do not understand','NEH-roh-zoo-meem'],
+  ['Mluvite anglicky?','Do you speak English?','MLOO-vee-teh AHNG-lits-kee'],
+  ['Jedno pivo, prosim','One beer, please','YED-no PEE-vo PROH-seem'],
+  ['Ucet, prosim','The bill, please','OO-chet PROH-seem'],
+  ['Kde je zastavka?','Where is the stop?','g-deh yeh ZAH-stahv-kah'],
+  ['Pomoc!','Help!','POH-mots'],
+  ['Zdravim','Greetings (casual)','ZDRAH-veem'],
+  ['Na zdravi!','Cheers!','nah ZDRAH-vee'],
+  ['Dobrou noc','Good night','DOH-broh nots'],
+  ['Kolik je hodin?','What time is it?','KOH-lik yeh HO-din']
+];
+
+let DB = null;
+
+/* ============ STANDALONE STORAGE (IndexedDB, works with no Claude / no account / no server) ============ */
+const IDB_NAME = 'praha_hq_db';
+const IDB_STORE = 'kv';
+let idbHandle = null;
+
+function openIDB(){
+  return new Promise(function(resolve, reject){
+    if(idbHandle){ resolve(idbHandle); return; }
+    if(!window.indexedDB){ reject(new Error('IndexedDB unavailable')); return; }
+    const req = indexedDB.open(IDB_NAME, 1);
+    req.onupgradeneeded = function(e){
+      const db = e.target.result;
+      if(!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
+    };
+    req.onsuccess = function(e){ idbHandle = e.target.result; resolve(idbHandle); };
+    req.onerror = function(e){ reject(e.target.error); };
+  });
+}
+function idbGet(key){
+  return openIDB().then(function(db){
+    return new Promise(function(resolve, reject){
+      const tx = db.transaction(IDB_STORE, 'readonly');
+      const req = tx.objectStore(IDB_STORE).get(key);
+      req.onsuccess = function(){ resolve(req.result); };
+      req.onerror = function(){ reject(req.error); };
+    });
+  });
+}
+function idbSet(key, value){
+  return openIDB().then(function(db){
+    return new Promise(function(resolve, reject){
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      const req = tx.objectStore(IDB_STORE).put(value, key);
+      req.onsuccess = function(){ resolve(true); };
+      req.onerror = function(){ reject(req.error); };
+    });
+  });
+}
+async function loadKey(key, fallback){
+  try{
+    const raw = await idbGet(key);
+    if(raw !== undefined && raw !== null) return JSON.parse(raw);
+  }catch(e){
+    try{
+      const ls = localStorage.getItem('praha_'+key);
+      if(ls) return JSON.parse(ls);
+    }catch(e2){ console.error('all storage failed for', key); }
+  }
+  return fallback;
+}
+async function saveKey(key, value){
+  const json = JSON.stringify(value);
+  try{ await idbSet(key, json); }
+  catch(e){
+    try{ localStorage.setItem('praha_'+key, json); }
+    catch(e2){ console.error('save failed entirely for', key, e2); }
+  }
+}
+async function loadAll(){
+  DB = {};
+  for(const k of Object.keys(DEFAULTS)){
+    DB[k] = await loadKey(k, DEFAULTS[k]);
+  }
+  if(!DB.settings.budgetCategories) DB.settings.budgetCategories = DEFAULT_BUDGET_CATS.slice();
+  if(!DB.settings.eventCategories) DB.settings.eventCategories = JSON.parse(JSON.stringify(DEFAULT_EVENT_CATS));
+  if(!DB.settings.hiddenTiles) DB.settings.hiddenTiles = [];
+  if(!DB.settings.homeBase) DB.settings.homeBase = 'Prague, Czech Republic';
+  if(!DB.settings.theme) DB.settings.theme = 'blueprint';
+  if(!DB.settings.visualOverrides) DB.settings.visualOverrides = {};
+  if(!Array.isArray(DB.settings.customThemes)) DB.settings.customThemes = [];
+}
+function persist(key){ saveKey(key, DB[key]); }
+function uid(){ return Math.random().toString(36).slice(2,9); }
+function esc(s){ return (s||'').toString().replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+/* ============ PHOTO UPLOAD ============ */
+function handlePhotoFile(inputEl, hiddenId, previewId){
+  const file = inputEl.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const img = new Image();
+    img.onload = function(){
+      let w = img.width, h = img.height; const maxDim = 700;
+      if(w > h && w > maxDim){ h = Math.round(h*maxDim/w); w = maxDim; }
+      else if(h >= w && h > maxDim){ w = Math.round(w*maxDim/h); h = maxDim; }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.62);
+      document.getElementById(hiddenId).value = dataUrl;
+      const prev = document.getElementById(previewId);
+      prev.src = dataUrl; prev.style.display = 'block';
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function mapsUrlFor(name, custom){
+  if(custom) return custom;
+  if(!name) return '';
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(name);
+}
+function directionsEmbedUrl(origin, dest, mode){
+  const flg = {walk:'w', transit:'r', drive:'d'}[mode] || 'r';
+  return 'https://www.google.com/maps?saddr='+encodeURIComponent(origin)+'&daddr='+encodeURIComponent(dest)+'&dirflg='+flg+'&output=embed';
+}
+const TRAVEL_MODE_MAP = {walk:'WALKING', transit:'TRANSIT', drive:'DRIVING'};
+let gmapsLoaded = false, gmapsLoading = false;
+let pendingMapInits = [];
+const mapInstances = {};
+function loadGoogleMapsScript(cb){
+  if(gmapsLoaded){ cb(); return; }
+  window.__gmapsCallbacks = window.__gmapsCallbacks || [];
+  window.__gmapsCallbacks.push(cb);
+  if(gmapsLoading) return;
+  gmapsLoading = true;
+  window.__onGmapsReady = function(){
+    gmapsLoaded = true; gmapsLoading = false;
+    window.__gmapsCallbacks.forEach(function(f){ f(); });
+    window.__gmapsCallbacks = [];
+  };
+  const script = document.createElement('script');
+  script.src = 'https://maps.googleapis.com/maps/api/js?key='+encodeURIComponent(DB.settings.mapsApiKey)+'&callback=__onGmapsReady';
+  script.async = true;
+  script.onerror = function(){ gmapsLoading = false; console.error('Google Maps script failed to load — check API key/restrictions.'); };
+  document.head.appendChild(script);
+}
+function routeMap(uidStr, type, id, mode){
+  const inst = mapInstances[uidStr];
+  if(!inst) return;
+  const loc = getItemLocation(type,id);
+  inst.service.route({origin:loc.origin, destination:loc.dest, travelMode:google.maps.TravelMode[mode]}, function(result,status){
+    if(status==='OK'){ inst.renderer.setDirections(result); }
+    else {
+      new google.maps.Geocoder().geocode({address:loc.dest}, function(results,geoStatus){
+        if(geoStatus==='OK' && results[0]){
+          inst.map.setCenter(results[0].geometry.location); inst.map.setZoom(14);
+          new google.maps.Marker({map:inst.map, position:results[0].geometry.location});
+        }
+      });
+    }
+  });
+}
+function flushPendingMapInits(){
+  if(!pendingMapInits.length) return;
+  const queue = pendingMapInits.slice();
+  pendingMapInits = [];
+  loadGoogleMapsScript(function(){
+    queue.forEach(function(q){
+      const el = document.getElementById('mapdiv-'+q.uidStr);
+      if(!el) return;
+      const map = new google.maps.Map(el, {zoom:12, center:{lat:50.0755,lng:14.4378}, disableDefaultUI:true, zoomControl:true});
+      const renderer = new google.maps.DirectionsRenderer({map:map});
+      const service = new google.maps.DirectionsService();
+      mapInstances[q.uidStr] = {map:map, renderer:renderer, service:service};
+      routeMap(q.uidStr, q.type, q.id, 'WALKING');
+    });
+  });
+}
+function getItemLocation(type,id){
+  let item, dest, origin;
+  if(type==='trip'){ item = DB.trips.find(function(x){return x.id===id;}); dest = item?item.dest:''; origin = (item&&item.origin) || DB.settings.homeBase; }
+  if(type==='place'){ item = DB.places.find(function(x){return x.id===id;}); dest = item?item.name:''; origin = (item&&item.origin) || DB.settings.homeBase; }
+  if(type==='spot'){ item = DB.spots.find(function(x){return x.id===id;}); dest = item?item.name:''; origin = (item&&item.origin) || DB.settings.homeBase; }
+  if(type==='event'){ item = DB.events.find(function(x){return x.id===id;}); dest = item?item.location:''; origin = (item&&item.origin) || DB.settings.homeBase; }
+  return {dest:dest, origin:origin || 'Prague, Czech Republic'};
+}
+function renderMapBlock(type, id, dest){
+  if(!dest) return '';
+  const uidStr = type+'-'+id;
+  const loc = getItemLocation(type,id);
+  if(DB.settings.mapsApiKey){
+    pendingMapInits.push({uidStr:uidStr, type:type, id:id});
+    return '<div class="map-block">'+
+      '<div class="map-modes">'+
+        '<button class="mode-btn active" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'walk\',this)">Walk</button>'+
+        '<button class="mode-btn" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'transit\',this)">Transit</button>'+
+        '<button class="mode-btn" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'drive\',this)">Drive</button>'+
+      '</div>'+
+      '<div class="map-meta">From: '+esc(loc.origin)+'</div>'+
+      '<div class="map-embed" id="mapdiv-'+uidStr+'"></div>'+
+    '</div>';
+  }
+  return '<div class="map-block">'+
+    '<div class="map-modes">'+
+      '<button class="mode-btn active" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'walk\',this)">Walk</button>'+
+      '<button class="mode-btn" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'transit\',this)">Transit</button>'+
+      '<button class="mode-btn" onclick="switchMapMode(\''+uidStr+'\',\''+type+'\',\''+id+'\',\'drive\',this)">Drive</button>'+
+    '</div>'+
+    '<div class="map-meta">From: '+esc(loc.origin)+'</div>'+
+    '<iframe class="map-embed" id="mapframe-'+uidStr+'" loading="lazy" src="'+directionsEmbedUrl(loc.origin,loc.dest,'walk')+'"></iframe>'+
+  '</div>';
+}
+function switchMapMode(uidStr, type, id, mode, btn){
+  const parent = btn.parentElement;
+  parent.querySelectorAll('.mode-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  if(DB.settings.mapsApiKey && mapInstances[uidStr]){
+    routeMap(uidStr, type, id, TRAVEL_MODE_MAP[mode]||'WALKING');
+  } else {
+    const loc = getItemLocation(type,id);
+    const frame = document.getElementById('mapframe-'+uidStr);
+    if(frame) frame.src = directionsEmbedUrl(loc.origin, loc.dest, mode);
+  }
+}
+function linkChips(website, maps){
+  let html = '';
+  if(website) html += '<a class="linkchip" href="'+esc(website)+'" target="_blank" onclick="event.stopPropagation()">Website</a>';
+  if(maps) html += '<a class="linkchip" href="'+esc(maps)+'" target="_blank" onclick="event.stopPropagation()">Maps</a>';
+  return html;
+}
+function editBtn(fn){ return DB.settings.editMode ? '<button class="icon-btn" onclick="'+fn+'">edit</button>' : ''; }
+
+/* ============ NAV ============ */
+const TOP_TABS = ['dashboard','calendar','budget','trips','more'];
+let navStack = ['dashboard'];
+
+const BUILTIN_TILES = [
+  {key:'todo', emoji:'✅', name:'Bucket List / To-Do', desc:'Custom checklists'},
+  {key:'food', emoji:'🍽️', name:'Food Hub', desc:'Tracker, planner, spots'},
+  {key:'places', emoji:'📍', name:'Places', desc:'Visit list & ratings'},
+  {key:'packing', emoji:'🎒', name:'Packing List', desc:'Checklist by category'},
+  {key:'journal', emoji:'📓', name:'Journal', desc:'Log the semester'},
+  {key:'phrasebook', emoji:'🗣️', name:'Czech Phrases', desc:'Survival phrasebook'},
+  {key:'emergency', emoji:'🚨', name:'Emergency Info', desc:'Contacts & documents'},
+  {key:'transit', emoji:'🚋', name:'Transit Pass', desc:'90-day pass tracker'},
+  {key:'classes', emoji:'🎓', name:'Class Schedule', desc:'Courses & rooms'},
+  {key:'contacts', emoji:'👥', name:'Contacts', desc:'Roommates & friends'},
+  {key:'links', emoji:'🔗', name:'Link Vault', desc:'Bookings, leases, portals'},
+  {key:'cash', emoji:'💵', name:'Cash Tracker', desc:'ATM withdrawals'}
+];
+
+const TITLES = {
+  dashboard:{e:'PRAHA HQ', t:'Home'}, calendar:{e:'PLANNER', t:'Calendar'}, budget:{e:'FINANCE', t:'Budget'},
+  trips:{e:'TRAVEL', t:'Trip Ideas'}, more:{e:'PRAHA HQ', t:'More'}, settings:{e:'PRAHA HQ', t:'Settings'},
+  todo:{e:'GOALS', t:'Bucket List'}, food:{e:'FOOD HUB', t:'Food'}, places:{e:'EXPLORE', t:'Places'},
+  packing:{e:'GEAR', t:'Packing List'}, journal:{e:'LOG', t:'Journal'}, phrasebook:{e:'REFERENCE', t:'Czech Phrases'},
+  emergency:{e:'SAFETY', t:'Emergency Info'}, transit:{e:'MOBILITY', t:'Transit Pass'},
+  classes:{e:'SCHOOL', t:'Class Schedule'}, contacts:{e:'PEOPLE', t:'Contacts'}, links:{e:'VAULT', t:'Link Vault'},
+  cash:{e:'CASH', t:'Cash Tracker'}, customtab:{e:'CUSTOM', t:'List'}
+};
+
+function showScreen(name){
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('screen-'+name).classList.add('active');
+  document.getElementById('topEyebrow').childNodes[0].nodeValue = TITLES[name].e + ' ';
+  document.getElementById('topTitle').textContent = TITLES[name].t;
+  document.getElementById('backBtn').classList.toggle('hidden', TOP_TABS.indexOf(name) !== -1);
+  document.querySelectorAll('.navbtn').forEach(function(b){
+    b.classList.toggle('active', b.dataset.tab === (TOP_TABS.indexOf(name)!==-1 ? name : 'more'));
+  });
+  window.scrollTo(0,0);
+  renderScreen(name);
+  setTimeout(function(){ applySavedVisuals(); if(visualEditorOpen) installVisualEditorHandlers(); }, 0);
+}
+function switchTab(name){ navStack = [name]; showScreen(name); }
+function openSection(name){ navStack.push(name); showScreen(name); }
+function goBack(){ if(navStack.length>1){ navStack.pop(); showScreen(navStack[navStack.length-1]); } }
+
+function renderScreen(name){
+  document.getElementById('editBadge').style.display = DB.settings.editMode ? 'inline-block' : 'none';
+  if(name==='dashboard') renderDashboard();
+  if(name==='calendar') renderCalendar();
+  if(name==='budget') renderBudget();
+  if(name==='trips') renderTrips();
+  if(name==='more') renderMore();
+  if(name==='todo') renderTodo();
+  if(name==='food') renderFood();
+  if(name==='places') renderPlaces();
+  if(name==='packing') renderPacking();
+  if(name==='journal') renderJournal();
+  if(name==='phrasebook') renderPhrasebook();
+  if(name==='emergency') renderEmergency();
+  if(name==='transit') renderTransit();
+  if(name==='classes') renderClasses();
+  if(name==='contacts') renderContacts();
+  if(name==='links') renderLinks();
+  if(name==='cash') renderCash();
+  if(name==='customtab') renderCustomTab();
+  if(name==='settings') renderSettings();
+}
+
+function toggleForm(id){ document.getElementById(id).classList.toggle('open'); }
+function closeForm(id){ document.getElementById(id).classList.remove('open'); }
+function openForm(id){ document.getElementById(id).classList.add('open'); document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+
+function parseLocalDate(dateStr) {
+  if (!dateStr) return null;
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function localDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatDateInput(date = new Date()) {
+  return localDateKey(date);
+}
+
+
+/* ============ DASHBOARD ============ */
+function daysBetween(a, b) {
+  const start = typeof a === "string" ? parseLocalDate(a) : new Date(a);
+  const end = typeof b === "string" ? parseLocalDate(b) : new Date(b);
+
+  start.setHours(0, 0, 0, 0);
+  end.setHours(0, 0, 0, 0);
+
+  return Math.round((end - start) / 86400000);
+}
+
+
+function computePredicted(){
+  const tripPredicted = DB.trips.filter(function(t){ return t.status!=='Done'; }).reduce(function(s,t){ return s+(parseFloat(t.travelCost)||0)+(parseFloat(t.housingCost)||0); },0);
+  const eventPredicted = DB.events.reduce(function(s,e){ return s+(parseFloat(e.cost)||0); },0);
+  const foodPlanPredicted = DB.foodPlans.reduce(function(s,f){ return s+(parseFloat(f.cost)||0); },0);
+  return {tripPredicted:tripPredicted, eventPredicted:eventPredicted, foodPlanPredicted:foodPlanPredicted, total:tripPredicted+eventPredicted+foodPlanPredicted};
+}
+
+function getNearestImportantDate(){
+  const todayKey = localDateKey();
+  const today = parseLocalDate(todayKey);
+  const important = DB.events
+    .filter(function(e){
+      return !!e.important && e.date && parseLocalDate(e.date) >= today;
+    })
+    .sort(function(a,b){ return a.date.localeCompare(b.date); });
+  return important.length ? important[0] : null;
+}
+
+function formatFriendlyDate(dateStr){
+  const dt = parseLocalDate(dateStr);
+  return dt ? dt.toLocaleDateString('en-US',{month:'short', day:'numeric', year:'numeric'}) : '';
+}
+
+function openImportantDates(){
+  const panel = document.getElementById('importantDatesPanel');
+  const list = document.getElementById('importantDatesList');
+  const todayKey = localDateKey();
+  const today = parseLocalDate(todayKey);
+
+  const dates = DB.events.slice()
+    .filter(function(e){ return !!e.important && e.date && parseLocalDate(e.date) >= today; })
+    .sort(function(a,b){ return a.date.localeCompare(b.date); });
+
+  if(!dates.length){
+    list.innerHTML = '<div class="empty-msg">No important dates yet. Mark an event as Important in the calendar.</div>';
+  } else {
+    list.innerHTML = dates.map(function(e){
+      const dt = parseLocalDate(e.date);
+      const days = daysBetween(todayKey, e.date);
+      return '<div class="upcoming-row">'+
+        '<div class="upcoming-date"><span>'+dt.toLocaleString('en',{month:'short'})+'</span><b>'+dt.getDate()+'</b></div>'+
+        '<div style="flex:1;"><div class="item-title">'+esc(e.title)+'</div>'+
+        '<div class="item-meta">'+formatFriendlyDate(e.date)+(e.time?' • '+e.time:'')+'</div>'+
+        '<div class="item-meta" style="color:var(--rust); font-weight:600;">'+days+' day'+(days===1?'':'s')+' to go</div></div></div>';
+    }).join('');
+  }
+
+  panel.style.display = 'block';
+  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function closeImportantDates(){
+  document.getElementById('importantDatesPanel').style.display = 'none';
+}
+
+
+function shuffleWordOfDay(){
+  const data=PHRASES.concat(EXTRA_PHRASES);
+  const item=data[Math.floor(Math.random()*data.length)];
+  document.getElementById('wordOfDayCzech').textContent=item[0];
+  document.getElementById('wordOfDayEnglish').textContent=item[1];
+  document.getElementById('wordOfDayPronunciation').textContent=item[2];
+}
+function renderDashboard(){
+  if(document.getElementById('wordOfDayCzech') && !document.getElementById('wordOfDayCzech').dataset.ready){ shuffleWordOfDay(); document.getElementById('wordOfDayCzech').dataset.ready='1'; }
+  const todayKey = localDateKey();
+  const today = parseLocalDate(todayKey);
+  const important = getNearestImportantDate();
+
+  if(important){
+    const days = daysBetween(todayKey, important.date);
+    document.getElementById('dashEyebrow').childNodes[0].nodeValue =
+      (important.title || 'Important Date').toUpperCase() + ' COUNTDOWN ';
+    document.getElementById('dashCountdown').innerHTML = days + '<span> days</span>';
+    document.getElementById('dashSub').textContent =
+      formatFriendlyDate(important.date) + (important.time ? ' • ' + important.time : '');
+  } else {
+    const start = parseLocalDate(DB.settings.programStart);
+    const end = parseLocalDate(DB.settings.programEnd);
+    let label, sub;
+
+    if(today < start){
+      label = daysBetween(todayKey, DB.settings.programStart);
+      sub = 'until you land in Prague';
+      document.getElementById('dashEyebrow').childNodes[0].nodeValue='DEPARTURE COUNTDOWN ';
+    } else if(today <= end){
+      label = daysBetween(todayKey, DB.settings.programEnd);
+      sub = 'days left in the semester';
+      document.getElementById('dashEyebrow').childNodes[0].nodeValue='SEMESTER COUNTDOWN ';
+    } else {
+      label = 'Done';
+      sub = 'semester complete — nice work';
+      document.getElementById('dashEyebrow').childNodes[0].nodeValue='SEMESTER COMPLETE ';
+    }
+
+    document.getElementById('dashCountdown').innerHTML =
+      label + (typeof label==='number' ? '<span> days</span>' : '');
+    document.getElementById('dashSub').textContent = sub;
+  }
+
+  const ym = todayKey.slice(0,7);
+  const spentCzk = DB.expenses.filter(function(e){
+    return e.date && e.date.indexOf(ym)===0;
+  }).reduce(function(s,e){ return s+e.czk; },0);
+
+  document.getElementById('dashSpent').textContent =
+    Math.round(spentCzk).toLocaleString() + ' Kc';
+  document.getElementById('dashPredicted').textContent =
+    '$' + Math.round(computePredicted().total).toLocaleString();
+
+  document.getElementById('fxRateLabel').textContent = DB.settings.fxRate;
+  fxFromUsd();
+  loadWeather();
+
+  const upcoming = DB.events.slice()
+    .filter(function(e){ return parseLocalDate(e.date) >= today; })
+    .sort(function(a,b){ return a.date.localeCompare(b.date); })
+    .slice(0,3);
+
+  const box = document.getElementById('dashUpcoming');
+  if(upcoming.length===0){
+    box.innerHTML='<div class="empty-msg">No upcoming events yet.</div>';
+  } else {
+    box.innerHTML = upcoming.map(function(e){
+      const dt = parseLocalDate(e.date);
+      return '<div class="upcoming-row"><div class="upcoming-date"><span>'+dt.toLocaleString('en',{month:'short'})+'</span><b>'+dt.getDate()+'</b></div>'+
+        '<div><div class="item-title">'+esc(e.title)+'</div><div class="item-meta">'+
+        (e.time?e.time+' • ':'')+esc(catLabel(e.cat))+
+        (e.important?' • <strong style="color:var(--rust)">Important</strong>':'')+
+        '</div></div></div>';
+    }).join('');
+  }
+}
+/* ============ WEATHER ============ */
+const WMO = {
+  0:['Clear sky','☀️'],1:['Mostly clear','🌤️'],2:['Partly cloudy','⛅'],3:['Overcast','☁️'],
+  45:['Fog','🌫️'],48:['Fog','🌫️'],51:['Light drizzle','🌦️'],53:['Drizzle','🌦️'],55:['Heavy drizzle','🌧️'],
+  61:['Light rain','🌦️'],63:['Rain','🌧️'],65:['Heavy rain','🌧️'],71:['Light snow','🌨️'],73:['Snow','❄️'],
+  75:['Heavy snow','❄️'],77:['Snow grains','🌨️'],80:['Rain showers','🌦️'],81:['Rain showers','🌧️'],
+  82:['Heavy showers','⛈️'],85:['Snow showers','🌨️'],86:['Snow showers','❄️'],95:['Thunderstorm','⛈️'],
+  96:['Thunderstorm w/ hail','⛈️'],99:['Thunderstorm w/ hail','⛈️']
+};
+let weatherLoaded = false;
+async function loadWeather(){
+  if(weatherLoaded) return;
+  try{
+    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=50.0755&longitude=14.4378&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Europe%2FPrague&temperature_unit=fahrenheit&forecast_days=4');
+    if(!res.ok) throw new Error('bad response');
+    const data = await res.json();
+    weatherLoaded = true;
+    const cur = WMO[data.current.weather_code] || ['—','🌡️'];
+    document.getElementById('weatherPlace').textContent = 'PRAGUE NOW';
+    document.getElementById('weatherTemp').textContent = Math.round(data.current.temperature_2m)+'°F';
+    document.getElementById('weatherDesc').textContent = cur[0];
+    document.getElementById('weatherIcon').textContent = cur[1];
+    const days = data.daily.time.slice(1,4).map(function(d,i){
+      const idx = i+1;
+      const w = WMO[data.daily.weather_code[idx]] || ['—','🌡️'];
+      const dt = new Date(d);
+      return '<div style="text-align:center; min-width:52px;"><div style="font-size:10px; color:#8a8064; font-family:\'JetBrains Mono\',monospace;">'+dt.toLocaleString('en',{weekday:'short'})+'</div>'+
+        '<div style="font-size:20px; margin:2px 0;">'+w[1]+'</div>'+
+        '<div style="font-size:11px; font-weight:600;">'+Math.round(data.daily.temperature_2m_max[idx])+'°</div>'+
+        '<div style="font-size:10px; color:#8a8064;">'+Math.round(data.daily.temperature_2m_min[idx])+'°</div></div>';
+    }).join('');
+    document.getElementById('weatherForecast').innerHTML = days;
+    document.getElementById('weatherCard').style.display = 'block';
+    document.getElementById('weatherFallback').style.display = 'none';
+  }catch(e){
+    document.getElementById('weatherCard').style.display = 'none';
+    document.getElementById('weatherFallback').style.display = 'block';
+  }
+}
+
+function fxFromUsd(){ document.getElementById('fxCzk').value = (parseFloat(document.getElementById('fxUsd').value||0) * DB.settings.fxRate).toFixed(1); }
+function fxFromCzk(){ document.getElementById('fxUsd').value = (parseFloat(document.getElementById('fxCzk').value||0) / DB.settings.fxRate).toFixed(2); }
+function openFxEdit(){
+  const r = prompt('Update USD to CZK rate (check current rate online):', DB.settings.fxRate);
+  if(r && !isNaN(parseFloat(r))){ DB.settings.fxRate = parseFloat(r); persist('settings'); renderDashboard(); }
+}
+/* ============ CALENDAR ============ */
+let calDate = new Date();
+function catLabel(c){ const ec = DB.settings.eventCategories[c]; return ec ? ec.label : c; }
+function catColor(c){ const ec = DB.settings.eventCategories[c]; return ec ? ec.color : '#8CA0B3'; }
+
+function populateEventCatSelect(){
+  const sel = document.getElementById('evtCat');
+  sel.innerHTML = Object.keys(DB.settings.eventCategories).map(function(k){
+    return '<option value="'+k+'">'+esc(DB.settings.eventCategories[k].label)+'</option>';
+  }).join('');
+}
+
+function calShift(n){ calDate.setMonth(calDate.getMonth()+n); renderCalendar(); }
+
+function renderCalendar(){
+  populateEventCatSelect();
+  const y = calDate.getFullYear(), m = calDate.getMonth();
+  document.getElementById('calLabel').textContent = calDate.toLocaleString('en',{month:'long', year:'numeric'});
+  const first = new Date(y,m,1); const startDow = first.getDay();
+  const daysInMonth = new Date(y,m+1,0).getDate();
+  const todayStr = localDateKey();
+  let html = ['S','M','T','W','T','F','S'].map(function(d){ return '<div class="cal-dow">'+d+'</div>'; }).join('');
+  for(let i=0;i<startDow;i++) html += '<div class="cal-day empty"></div>';
+  for(let d=1; d<=daysInMonth; d++){
+    const dateStr = y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    const has = DB.events.some(function(e){ return e.date===dateStr; });
+    html += '<div class="cal-day '+(dateStr===todayStr?'today':'')+'" onclick="calDayClick(\''+dateStr+'\')">'+d+(has?'<div class="dot"></div>':'')+'</div>';
+  }
+  document.getElementById('calGrid').innerHTML = html;
+
+  const sorted = DB.events.slice().sort(function(a,b){ return a.date.localeCompare(b.date); });
+  const list = document.getElementById('calList');
+  if(sorted.length===0){ list.innerHTML = '<div class="empty-msg">No events yet.</div>'; return; }
+  list.innerHTML = '<div class="item">' + sorted.map(function(e){
+    const dt = parseLocalDate(e.date);
+    const color = catColor(e.cat);
+    return '<div class="event-item"><div class="upcoming-date" style="background:'+color+'22; color:'+color+';">'+dt.toLocaleString('en',{month:'short'})+'<b style="color:inherit;">'+dt.getDate()+'</b></div>'+
+    '<div style="flex:1;"><div class="item-title" style="font-size:14px;">'+esc(e.title)+'</div>'+
+    '<div class="item-meta">'+(e.time?e.time+' - ':'')+'<span class="tag" style="background:'+color+'">'+esc(catLabel(e.cat))+'</span>'+(e.cost?' <span class="pill">$'+e.cost+' est.</span>':'')+'</div>'+
+    (e.notes?'<div class="item-meta" style="margin-top:3px;">'+esc(e.notes)+'</div>':'')+
+    linkChips(e.link,'')+
+    renderMapBlock('event', e.id, e.location)+
+    '</div><div class="item-actions">'+editBtn("editEvent('"+e.id+"')")+'<button class="icon-btn" onclick="deleteEvent(\''+e.id+'\')" style="color:var(--rust)">x</button></div></div>';
+  }).join('') + '</div>';
+  flushPendingMapInits();
+}
+function calDayClick(dateStr){ openEventForm(); document.getElementById('evtDate').value = dateStr; }
+function openEventForm(){
+  document.getElementById('editingEventId').value='';
+  ['evtTitle','evtTime','evtNotes','evtCost','evtLink','evtLocation'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('evtImportant').checked = false;
+  document.getElementById('evtDate').value = localDateKey();
+  openForm('evtForm');
+}
+function editEvent(id){
+  const e = DB.events.find(function(x){ return x.id===id; }); if(!e) return;
+  document.getElementById('editingEventId').value = id;
+  document.getElementById('evtTitle').value = e.title;
+  document.getElementById('evtDate').value = e.date;
+  document.getElementById('evtTime').value = e.time||'';
+  populateEventCatSelect();
+  document.getElementById('evtCat').value = e.cat;
+  document.getElementById('evtCost').value = e.cost||'';
+  document.getElementById('evtLink').value = e.link||'';
+  document.getElementById('evtLocation').value = e.location||'';
+  document.getElementById('evtNotes').value = e.notes||'';
+  document.getElementById('evtImportant').checked = !!e.important;
+  openForm('evtForm');
+}
+function saveEvent(){
+  const title = document.getElementById('evtTitle').value.trim();
+  const date = document.getElementById('evtDate').value;
+  if(!title || !date){ alert('Add a title and date.'); return; }
+  const data = {title:title, date:date, time:document.getElementById('evtTime').value, cat:document.getElementById('evtCat').value,
+    important:document.getElementById('evtImportant').checked, notes:document.getElementById('evtNotes').value.trim(), cost:parseFloat(document.getElementById('evtCost').value)||0, link:document.getElementById('evtLink').value.trim(), location:document.getElementById('evtLocation').value.trim()};
+  const editId = document.getElementById('editingEventId').value;
+  if(editId){ const idx = DB.events.findIndex(function(x){ return x.id===editId; }); DB.events[idx] = Object.assign({id:editId}, data); }
+  else { DB.events.push(Object.assign({id:uid()}, data)); }
+  persist('events');
+  closeForm('evtForm');
+  renderCalendar();
+}
+function deleteEvent(id){ DB.events = DB.events.filter(function(e){ return e.id!==id; }); persist('events'); renderCalendar(); }
+
+/* ============ BUDGET ============ */
+function populateBudgetCatSelect(){
+  const sel = document.getElementById('budCat');
+  sel.innerHTML = DB.settings.budgetCategories.map(function(c){ return '<option>'+esc(c)+'</option>'; }).join('');
+}
+function saveBudgetGoal(){ DB.budgetGoal = parseFloat(document.getElementById('budgetGoal').value)||0; persist('budgetGoal'); renderBudget(); }
+
+function renderBudget(){
+  populateBudgetCatSelect();
+  document.getElementById('budgetGoal').value = DB.budgetGoal || '';
+  const today = new Date(); const ym = today.toISOString().slice(0,7);
+  const monthExpenses = DB.expenses.filter(function(e){ return e.date && e.date.indexOf(ym)===0; });
+  const totalUsd = monthExpenses.reduce(function(s,e){ return s+e.usd; },0);
+  document.getElementById('budgetSpentLabel').textContent = '$'+totalUsd.toFixed(0)+' spent';
+  document.getElementById('budgetGoalLabel').textContent = 'of $'+(DB.budgetGoal||0);
+  const pct = DB.budgetGoal ? Math.min(100, (totalUsd/DB.budgetGoal)*100) : 0;
+  const fill = document.getElementById('budgetBarFill');
+  fill.style.width = pct+'%';
+  fill.style.background = pct>90 ? 'var(--rust)' : (pct>65 ? 'var(--amber)' : 'var(--cyan)');
+
+  const pred = computePredicted();
+  document.getElementById('predictedBreakdown').innerHTML =
+    '<div class="bar-row"><div class="blabel"><span>Trip ideas (not yet done)</span><span>$'+pred.tripPredicted.toFixed(0)+'</span></div></div>'+
+    '<div class="bar-row"><div class="blabel"><span>Planned meals</span><span>$'+pred.foodPlanPredicted.toFixed(0)+'</span></div></div>'+
+    '<div class="bar-row"><div class="blabel"><span>Upcoming events</span><span>$'+pred.eventPredicted.toFixed(0)+'</span></div></div>';
+  document.getElementById('predictedTotal').textContent = '$'+pred.total.toFixed(0);
+
+  const cats = {};
+  monthExpenses.forEach(function(e){ cats[e.cat] = (cats[e.cat]||0) + e.usd; });
+  const max = Math.max(1, Math.max.apply(null, Object.values(cats).length?Object.values(cats):[0]));
+  const catBox = document.getElementById('budgetByCat');
+  const entries = Object.entries(cats).sort(function(a,b){ return b[1]-a[1]; });
+  catBox.innerHTML = entries.length ? entries.map(function(pair){
+    return '<div class="bar-row"><div class="blabel"><span>'+esc(pair[0])+'</span><span>$'+pair[1].toFixed(0)+'</span></div>'+
+    '<div class="bar-track"><div class="bar-fill" style="width:'+(pair[1]/max*100)+'%"></div></div></div>';
+  }).join('') : '<p class="card-sub">No expenses logged this month yet.</p>';
+
+  const list = document.getElementById('budList');
+  const sorted = DB.expenses.slice().sort(function(a,b){ return b.date.localeCompare(a.date); }).slice(0,25);
+  list.innerHTML = sorted.length ? sorted.map(function(e){
+    return '<div class="item"><div class="item-top">'+
+      '<div><div class="item-title" style="font-size:14px;">'+esc(e.desc||e.cat)+'</div>'+
+      '<div class="item-meta"><span class="pill">'+esc(e.cat)+'</span>'+e.date+' - '+e.czk.toFixed(0)+' Kc / $'+e.usd.toFixed(2)+'</div></div>'+
+      '<div class="item-actions">'+editBtn("editExpense('"+e.id+"')")+'<button class="icon-btn" onclick="deleteExpense(\''+e.id+'\')" style="color:var(--rust)">x</button></div>'+
+      '</div></div>';
+  }).join('') : '<div class="empty-msg">No expenses logged yet.</div>';
+}
+function openExpenseForm(){
+  document.getElementById('editingExpenseId').value='';
+  ['budDesc','budAmtCzk','budAmtUsd'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('budDate').value = localDateKey();
+  populateBudgetCatSelect();
+  openForm('budForm');
+}
+function editExpense(id){
+  const e = DB.expenses.find(function(x){ return x.id===id; }); if(!e) return;
+  document.getElementById('editingExpenseId').value = id;
+  document.getElementById('budDate').value = e.date;
+  populateBudgetCatSelect();
+  document.getElementById('budCat').value = e.cat;
+  document.getElementById('budDesc').value = e.desc||'';
+  document.getElementById('budAmtCzk').value = e.czk;
+  document.getElementById('budAmtUsd').value = e.usd;
+  openForm('budForm');
+}
+function saveExpense(){
+  const date = document.getElementById('budDate').value || localDateKey();
+  const cat = document.getElementById('budCat').value;
+  const desc = document.getElementById('budDesc').value.trim();
+  let czk = parseFloat(document.getElementById('budAmtCzk').value);
+  let usd = parseFloat(document.getElementById('budAmtUsd').value);
+  if(!czk && !usd){ alert('Enter an amount in CZK or USD.'); return; }
+  if(czk && !usd) usd = czk / DB.settings.fxRate;
+  if(usd && !czk) czk = usd * DB.settings.fxRate;
+  const editId = document.getElementById('editingExpenseId').value;
+  const data = {date:date, cat:cat, desc:desc, czk:czk, usd:usd};
+  if(editId){ const idx = DB.expenses.findIndex(function(x){ return x.id===editId; }); DB.expenses[idx] = Object.assign({id:editId}, data); }
+  else { DB.expenses.push(Object.assign({id:uid()}, data)); }
+  persist('expenses');
+  closeForm('budForm');
+  renderBudget();
+}
+function deleteExpense(id){ DB.expenses = DB.expenses.filter(function(e){ return e.id!==id; }); persist('expenses'); renderBudget(); }
+
+/* ============ TRIPS ============ */
+function renderTrips(){
+  const box = document.getElementById('tripList');
+  if(DB.trips.length===0){ box.innerHTML='<div class="empty-msg">No trip ideas yet — add one above.</div>'; return; }
+  box.innerHTML = DB.trips.map(function(t){
+    const total = (parseFloat(t.travelCost)||0)+(parseFloat(t.housingCost)||0);
+    const split = parseInt(t.split)||1;
+    const per = split>1 ? Math.round(total/split) : null;
+    const img = t.img || '';
+    const maps = mapsUrlFor(t.dest, t.mapsLink);
+    return '<div class="item">'+
+    (img?'<img class="trip-img" src="'+esc(img)+'" onerror="this.style.display=\'none\'">':'')+
+    '<div class="item-top"><h2 class="card-title">'+esc(t.dest)+'</h2>'+
+    '<div class="item-actions">'+editBtn("editTrip('"+t.id+"')")+'<button class="icon-btn" onclick="deleteTrip(\''+t.id+'\')" style="color:var(--rust)">x</button></div></div>'+
+    '<div class="item-meta" style="margin-bottom:6px;"><span class="pill">'+esc(t.status)+'</span><span class="pill">'+esc(t.mode)+'</span>'+(t.dates?esc(t.dates):'')+'</div>'+
+    '<div style="display:flex; gap:14px; font-size:12.5px; margin:6px 0; flex-wrap:wrap;">'+
+      '<div><b class="mono">$'+(parseFloat(t.travelCost)||0)+'</b><br><span style="color:#6a6250;">travel</span></div>'+
+      '<div><b class="mono">$'+(parseFloat(t.housingCost)||0)+'</b><br><span style="color:#6a6250;">housing</span></div>'+
+      '<div><b class="mono">'+(t.time||'?')+'h</b><br><span style="color:#6a6250;">transit time</span></div>'+
+      '<div><b class="mono">$'+total+'</b><br><span style="color:#6a6250;">est. total</span></div>'+
+      (per?('<div><b class="mono">$'+per+'</b><br><span style="color:#6a6250;">per person ('+split+')</span></div>'):'')+
+    '</div>'+
+    (t.notes?'<p class="card-sub">'+esc(t.notes)+'</p>':'')+
+    linkChips(t.website, maps)+
+    renderMapBlock('trip', t.id, t.dest)+
+    '</div>';
+  }).join('');
+  flushPendingMapInits();
+}
+function openTripForm(){
+  document.getElementById('editingTripId').value='';
+  ['tripDest','tripImg','tripDates','tripTravelCost','tripHousingCost','tripTime','tripNotes','tripWebsite','tripMapsLink','tripSplit','tripPhotoData','tripOrigin'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('tripMode').value='Train'; document.getElementById('tripStatus').value='Idea';
+  document.getElementById('tripPhotoPreview').style.display='none';
+  openForm('tripForm');
+}
+function editTrip(id){
+  const t = DB.trips.find(function(x){ return x.id===id; }); if(!t) return;
+  document.getElementById('editingTripId').value = id;
+  document.getElementById('tripDest').value = t.dest;
+  document.getElementById('tripImg').value = t.img||'';
+  document.getElementById('tripWebsite').value = t.website||'';
+  document.getElementById('tripMapsLink').value = t.mapsLink||'';
+  document.getElementById('tripOrigin').value = t.origin||'';
+  document.getElementById('tripDates').value = t.dates||'';
+  document.getElementById('tripTravelCost').value = t.travelCost||'';
+  document.getElementById('tripHousingCost').value = t.housingCost||'';
+  document.getElementById('tripTime').value = t.time||'';
+  document.getElementById('tripMode').value = t.mode||'Train';
+  document.getElementById('tripStatus').value = t.status||'Idea';
+  document.getElementById('tripSplit').value = t.split||'';
+  document.getElementById('tripNotes').value = t.notes||'';
+  document.getElementById('tripPhotoData').value='';
+  document.getElementById('tripPhotoPreview').style.display='none';
+  openForm('tripForm');
+}
+function saveTrip(){
+  const dest = document.getElementById('tripDest').value.trim();
+  if(!dest){ alert('Add a destination.'); return; }
+  const photoData = document.getElementById('tripPhotoData').value;
+  const data = {
+    dest:dest, img: photoData || document.getElementById('tripImg').value.trim(),
+    website:document.getElementById('tripWebsite').value.trim(), mapsLink:document.getElementById('tripMapsLink').value.trim(),
+    origin:document.getElementById('tripOrigin').value.trim(),
+    dates:document.getElementById('tripDates').value.trim(),
+    travelCost: parseFloat(document.getElementById('tripTravelCost').value)||0,
+    housingCost: parseFloat(document.getElementById('tripHousingCost').value)||0,
+    time: parseFloat(document.getElementById('tripTime').value)||0,
+    mode: document.getElementById('tripMode').value, status: document.getElementById('tripStatus').value,
+    split: parseInt(document.getElementById('tripSplit').value)||1,
+    notes: document.getElementById('tripNotes').value.trim()
+  };
+  const editId = document.getElementById('editingTripId').value;
+  if(editId){ const idx = DB.trips.findIndex(function(x){ return x.id===editId; }); DB.trips[idx] = Object.assign({id:editId}, data); }
+  else { DB.trips.push(Object.assign({id:uid()}, data)); }
+  persist('trips');
+  closeForm('tripForm');
+  renderTrips();
+}
+function deleteTrip(id){ DB.trips = DB.trips.filter(function(t){ return t.id!==id; }); persist('trips'); renderTrips(); }
+/* ============ MORE / CUSTOM TABS ============ */
+function ensureTileOrder(){
+  if(!DB.settings.tileOrder) DB.settings.tileOrder = BUILTIN_TILES.map(function(t){ return t.key; });
+  BUILTIN_TILES.forEach(function(t){ if(DB.settings.tileOrder.indexOf(t.key)===-1) DB.settings.tileOrder.push(t.key); });
+  DB.customTabs.forEach(function(ct){ const k='custom:'+ct.id; if(DB.settings.tileOrder.indexOf(k)===-1) DB.settings.tileOrder.push(k); });
+  DB.settings.tileOrder = DB.settings.tileOrder.filter(function(k){
+    if(k.indexOf('custom:')===0){ const id=k.slice(7); return DB.customTabs.some(function(ct){ return ct.id===id; }); }
+    return true;
+  });
+}
+function moveTileOrder(key, dir){
+  ensureTileOrder();
+  const arr = DB.settings.tileOrder;
+  const idx = arr.indexOf(key);
+  const swapIdx = idx+dir;
+  if(idx<0 || swapIdx<0 || swapIdx>=arr.length) return;
+  const tmp = arr[idx]; arr[idx]=arr[swapIdx]; arr[swapIdx]=tmp;
+  persist('settings');
+  renderMore();
+}
+function renderMore(){
+  ensureTileOrder();
+  const grid = document.getElementById('moreGrid');
+  const reorderRow = function(key){
+    return DB.settings.editMode ? '<div class="reorder-row" onclick="event.stopPropagation()"><button onclick="moveTileOrder(\''+key+'\',-1)">▲</button><button onclick="moveTileOrder(\''+key+'\',1)">▼</button></div>' : '';
+  };
+  grid.innerHTML = DB.settings.tileOrder.map(function(key){
+    if(key.indexOf('custom:')===0){
+      const id = key.slice(7);
+      const ct = DB.customTabs.find(function(c){ return c.id===id; });
+      if(!ct) return '';
+      return '<button class="more-tile" onclick="openCustomTab(\''+ct.id+'\')">'+
+        (DB.settings.editMode?'<span class="hide-x" onclick="event.stopPropagation(); deleteCustomTab(\''+ct.id+'\')">x</span>':'')+
+        '<div class="emoji">'+esc(ct.emoji||'📌')+'</div><div class="name">'+esc(ct.name)+'</div><div class="desc">Custom checklist</div>'+
+        reorderRow(key)+'</button>';
+    }
+    const t = BUILTIN_TILES.find(function(x){ return x.key===key; });
+    if(!t) return '';
+    const hidden = DB.settings.hiddenTiles.indexOf(t.key)!==-1;
+    if(hidden && !DB.settings.editMode) return '';
+    return '<button class="more-tile" style="'+(hidden?'opacity:.45;':'')+'" onclick="openSection(\''+t.key+'\')">'+
+      (DB.settings.editMode?'<span class="hide-x" onclick="event.stopPropagation(); toggleTileHidden(\''+t.key+'\')">'+(hidden?'+':'x')+'</span>':'')+
+      '<div class="emoji">'+t.emoji+'</div><div class="name">'+t.name+'</div><div class="desc">'+t.desc+'</div>'+
+      reorderRow(key)+'</button>';
+  }).join('');
+  document.getElementById('addCustomTabBtn').style.display = DB.settings.editMode ? 'flex' : 'none';
+}
+function toggleTileHidden(key){
+  const idx = DB.settings.hiddenTiles.indexOf(key);
+  if(idx===-1) DB.settings.hiddenTiles.push(key); else DB.settings.hiddenTiles.splice(idx,1);
+  persist('settings'); renderMore();
+}
+function addCustomTab(){
+  const name = document.getElementById('ctName').value.trim();
+  if(!name) return;
+  DB.customTabs.push({id:uid(), name:name, emoji:document.getElementById('ctEmoji').value.trim()||'📌', items:[]});
+  persist('customTabs');
+  document.getElementById('ctName').value=''; document.getElementById('ctEmoji').value='';
+  closeForm('customTabForm');
+  renderMore();
+}
+function deleteCustomTab(id){
+  if(!confirm('Delete this custom tab and all its items?')) return;
+  DB.customTabs = DB.customTabs.filter(function(c){ return c.id!==id; });
+  persist('customTabs'); renderMore();
+}
+let currentCustomTabId = null;
+function openCustomTab(id){
+  currentCustomTabId = id;
+  const ct = DB.customTabs.find(function(c){ return c.id===id; });
+  TITLES.customtab = {e:'CUSTOM LIST', t: ct ? ct.name : 'List'};
+  openSection('customtab');
+}
+function renderCustomTab(){
+  const ct = DB.customTabs.find(function(c){ return c.id===currentCustomTabId; });
+  if(!ct){ document.getElementById('customTabItems').innerHTML = '<div class="empty-msg">List not found.</div>'; return; }
+  document.getElementById('customTabItems').innerHTML = ct.items.length ? ct.items.map(function(it){
+    return '<div class="check-item '+(it.done?'done':'')+'">'+
+      '<input type="checkbox" '+(it.done?'checked':'')+' onchange="toggleCustomTabItem(\''+it.id+'\')">'+
+      '<span class="clabel" style="flex:1;">'+esc(it.text)+'</span>'+
+      '<button class="icon-btn" onclick="deleteCustomTabItem(\''+it.id+'\')" style="color:var(--rust)">x</button></div>';
+  }).join('') : '<p class="card-sub">Nothing here yet.</p>';
+}
+function addCustomTabItem(){
+  const val = document.getElementById('customTabNewItem').value.trim();
+  if(!val) return;
+  const ct = DB.customTabs.find(function(c){ return c.id===currentCustomTabId; });
+  ct.items.push({id:uid(), text:val, done:false});
+  persist('customTabs');
+  document.getElementById('customTabNewItem').value='';
+  renderCustomTab();
+}
+function toggleCustomTabItem(id){
+  const ct = DB.customTabs.find(function(c){ return c.id===currentCustomTabId; });
+  const it = ct.items.find(function(i){ return i.id===id; }); it.done=!it.done;
+  persist('customTabs'); renderCustomTab();
+}
+function deleteCustomTabItem(id){
+  const ct = DB.customTabs.find(function(c){ return c.id===currentCustomTabId; });
+  ct.items = ct.items.filter(function(i){ return i.id!==id; });
+  persist('customTabs'); renderCustomTab();
+}
+
+/* ============ TODO / BUCKET LISTS ============ */
+let activeListId = null;
+function renderTodo(){
+  const sel = document.getElementById('todoListsSelector');
+  sel.innerHTML = DB.todoLists.map(function(l){
+    return '<button class="btn btn-sm '+(l.id===activeListId?'btn-amber':'btn-outline-light')+'" style="flex-shrink:0;" onclick="selectList(\''+l.id+'\')">'+esc(l.name)+'</button>';
+  }).join('');
+  if(!activeListId && DB.todoLists.length) activeListId = DB.todoLists[0].id;
+  const list = DB.todoLists.find(function(l){ return l.id===activeListId; });
+  document.getElementById('todoActiveCard').style.display = list ? 'block' : 'none';
+  document.getElementById('todoEmpty').style.display = DB.todoLists.length ? 'none' : 'block';
+  if(!list) return;
+  document.getElementById('todoActiveName').textContent = list.name;
+  const items = document.getElementById('todoItems');
+  items.innerHTML = list.items.length ? list.items.map(function(it){
+    return '<div class="check-item '+(it.done?'done':'')+'">'+
+      '<input type="checkbox" '+(it.done?'checked':'')+' onchange="toggleTodoItem(\''+it.id+'\')">'+
+      '<span class="clabel" style="flex:1;">'+esc(it.text)+'</span>'+
+      '<button class="icon-btn" onclick="deleteTodoItem(\''+it.id+'\')" style="color:var(--rust)">x</button></div>';
+  }).join('') : '<p class="card-sub">Nothing here yet.</p>';
+}
+function selectList(id){ activeListId = id; renderTodo(); }
+function addTodoList(){
+  const name = document.getElementById('newListName').value.trim();
+  if(!name) return;
+  const l = {id:uid(), name:name, items:[]};
+  DB.todoLists.push(l); activeListId = l.id;
+  persist('todoLists');
+  document.getElementById('newListName').value='';
+  closeForm('newListForm');
+  renderTodo();
+}
+function deleteTodoList(){
+  if(!confirm('Delete this list?')) return;
+  DB.todoLists = DB.todoLists.filter(function(l){ return l.id!==activeListId; });
+  activeListId = DB.todoLists.length ? DB.todoLists[0].id : null;
+  persist('todoLists'); renderTodo();
+}
+function addTodoItem(){
+  const val = document.getElementById('todoNewItem').value.trim();
+  if(!val) return;
+  const list = DB.todoLists.find(function(l){ return l.id===activeListId; });
+  list.items.push({id:uid(), text:val, done:false});
+  persist('todoLists');
+  document.getElementById('todoNewItem').value='';
+  renderTodo();
+}
+function toggleTodoItem(id){
+  const list = DB.todoLists.find(function(l){ return l.id===activeListId; });
+  const it = list.items.find(function(i){ return i.id===id; }); it.done = !it.done;
+  persist('todoLists'); renderTodo();
+}
+function deleteTodoItem(id){
+  const list = DB.todoLists.find(function(l){ return l.id===activeListId; });
+  list.items = list.items.filter(function(i){ return i.id!==id; });
+  persist('todoLists'); renderTodo();
+}
+/* ============ FOOD HUB ============ */
+let currentFoodTab = 'tracker';
+function foodTab(name){
+  currentFoodTab = name;
+  ['tracker','planner','spots'].forEach(function(n){
+    document.getElementById('foodPane-'+n).style.display = n===name ? 'block':'none';
+    document.getElementById('foodTab-'+n).className = 'btn btn-sm ' + (n===name?'btn-amber':'btn-outline-light');
+  });
+}
+function stars(n){ n=parseInt(n)||0; return '<span class="stars">'+'★'.repeat(n)+'☆'.repeat(5-n)+'</span>'; }
+
+function renderFood(){
+  foodTab(currentFoodTab);
+  const logs = DB.foodLog.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  document.getElementById('foodLogList').innerHTML = logs.length ? logs.map(function(f){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(f.place)+'</div>'+
+      '<div class="item-meta"><span class="pill">'+f.meal+'</span>'+f.date+' - '+f.cost+' Kc '+(f.rating?'- '+stars(f.rating):'')+'</div>'+
+      '</div><div class="item-actions">'+editBtn("editFoodLog('"+f.id+"')")+'<button class="icon-btn" onclick="deleteFoodLog(\''+f.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No meals logged yet.</div>';
+
+  const plans = DB.foodPlans.slice().sort(function(a,b){ return a.date.localeCompare(b.date); });
+  document.getElementById('foodPlanList').innerHTML = plans.length ? plans.map(function(f){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(f.place)+'</div>'+
+      '<div class="item-meta">'+f.date+' '+(f.time||'')+(f.cost?' - $'+f.cost+' est.':'')+'</div>'+
+      (f.notes?'<div class="item-meta">'+esc(f.notes)+'</div>':'')+
+      '</div><div class="item-actions">'+editBtn("editFoodPlan('"+f.id+"')")+'<button class="icon-btn" onclick="deleteFoodPlan(\''+f.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">Nothing planned yet.</div>';
+
+  document.getElementById('spotList').innerHTML = DB.spots.length ? DB.spots.map(function(s){
+    const maps = mapsUrlFor(s.name, s.mapsLink);
+    return '<div class="item">'+
+      (s.img?'<img class="trip-img" style="height:100px;" src="'+esc(s.img)+'" onerror="this.style.display=\'none\'">':'')+
+      '<div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(s.name)+'</div>'+
+      '<div class="item-meta"><span class="pill">'+esc(s.cuisine||'-')+'</span><span class="pill">'+esc(s.price)+'</span>'+(s.visited?stars(s.rating):'<span class="pill" style="background:#dbe9dc;color:#3d6b46;">Want to visit</span>')+'</div>'+
+      (s.notes?'<div class="item-meta" style="margin-top:3px;">'+esc(s.notes)+'</div>':'')+
+      linkChips(s.website, maps)+
+      renderMapBlock('spot', s.id, s.name)+
+      '</div><div class="item-actions">'+editBtn("editSpot('"+s.id+"')")+'<button class="icon-btn" onclick="deleteSpot(\''+s.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No spots yet.</div>';
+  flushPendingMapInits();
+}
+
+function openFoodLogForm(){
+  document.getElementById('editingFoodLogId').value='';
+  ['ftPlace','ftCost','ftRating'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('ftDate').value = localDateKey();
+  openForm('foodTrackForm');
+}
+function editFoodLog(id){
+  const f = DB.foodLog.find(function(x){ return x.id===id; }); if(!f) return;
+  document.getElementById('editingFoodLogId').value = id;
+  document.getElementById('ftDate').value = f.date;
+  document.getElementById('ftMeal').value = f.meal;
+  document.getElementById('ftPlace').value = f.place;
+  document.getElementById('ftCost').value = f.cost;
+  document.getElementById('ftRating').value = f.rating||'';
+  openForm('foodTrackForm');
+}
+function saveFoodLog(){
+  const place = document.getElementById('ftPlace').value.trim();
+  if(!place) return;
+  const data = {date:document.getElementById('ftDate').value||localDateKey(),
+    meal:document.getElementById('ftMeal').value, place:place, cost:parseFloat(document.getElementById('ftCost').value)||0,
+    rating:parseInt(document.getElementById('ftRating').value)||0};
+  const editId = document.getElementById('editingFoodLogId').value;
+  if(editId){ const idx = DB.foodLog.findIndex(function(x){ return x.id===editId; }); DB.foodLog[idx] = Object.assign({id:editId}, data); }
+  else { DB.foodLog.push(Object.assign({id:uid()}, data)); }
+  persist('foodLog');
+  closeForm('foodTrackForm');
+  renderFood();
+}
+function deleteFoodLog(id){ DB.foodLog = DB.foodLog.filter(function(f){ return f.id!==id; }); persist('foodLog'); renderFood(); }
+
+function openFoodPlanForm(){
+  document.getElementById('editingFoodPlanId').value='';
+  ['fpPlace','fpNotes','fpCost'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('fpDate').value = localDateKey();
+  openForm('foodPlanForm');
+}
+function editFoodPlan(id){
+  const f = DB.foodPlans.find(function(x){ return x.id===id; }); if(!f) return;
+  document.getElementById('editingFoodPlanId').value = id;
+  document.getElementById('fpDate').value = f.date;
+  document.getElementById('fpTime').value = f.time||'';
+  document.getElementById('fpPlace').value = f.place;
+  document.getElementById('fpCost').value = f.cost||'';
+  document.getElementById('fpNotes').value = f.notes||'';
+  openForm('foodPlanForm');
+}
+function saveFoodPlan(){
+  const place = document.getElementById('fpPlace').value.trim();
+  if(!place) return;
+  const data = {date:document.getElementById('fpDate').value||localDateKey(),
+    time:document.getElementById('fpTime').value, place:place, cost:parseFloat(document.getElementById('fpCost').value)||0,
+    notes:document.getElementById('fpNotes').value.trim()};
+  const editId = document.getElementById('editingFoodPlanId').value;
+  if(editId){ const idx = DB.foodPlans.findIndex(function(x){ return x.id===editId; }); DB.foodPlans[idx] = Object.assign({id:editId}, data); }
+  else { DB.foodPlans.push(Object.assign({id:uid()}, data)); }
+  persist('foodPlans');
+  closeForm('foodPlanForm');
+  renderFood();
+}
+function deleteFoodPlan(id){ DB.foodPlans = DB.foodPlans.filter(function(f){ return f.id!==id; }); persist('foodPlans'); renderFood(); }
+
+function openSpotForm(){
+  document.getElementById('editingSpotId').value='';
+  ['spotName','spotCuisine','spotRating','spotNotes','spotWebsite','spotMapsLink','spotPhotoData','spotOrigin'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('spotPhotoPreview').style.display='none';
+  openForm('spotForm');
+}
+function editSpot(id){
+  const s = DB.spots.find(function(x){ return x.id===id; }); if(!s) return;
+  document.getElementById('editingSpotId').value = id;
+  document.getElementById('spotName').value = s.name;
+  document.getElementById('spotWebsite').value = s.website||'';
+  document.getElementById('spotMapsLink').value = s.mapsLink||'';
+  document.getElementById('spotOrigin').value = s.origin||'';
+  document.getElementById('spotCuisine').value = s.cuisine||'';
+  document.getElementById('spotPrice').value = s.price;
+  document.getElementById('spotVisited').value = s.visited?'1':'0';
+  document.getElementById('spotRating').value = s.rating||'';
+  document.getElementById('spotNotes').value = s.notes||'';
+  document.getElementById('spotPhotoData').value='';
+  document.getElementById('spotPhotoPreview').style.display='none';
+  openForm('spotForm');
+}
+function saveSpot(){
+  const name = document.getElementById('spotName').value.trim();
+  if(!name) return;
+  const photoData = document.getElementById('spotPhotoData').value;
+  const editId = document.getElementById('editingSpotId').value;
+  const existing = editId ? DB.spots.find(function(x){ return x.id===editId; }) : null;
+  const data = {name:name, img: photoData || (existing?existing.img:'') , cuisine:document.getElementById('spotCuisine').value.trim(), price:document.getElementById('spotPrice').value,
+    website:document.getElementById('spotWebsite').value.trim(), mapsLink:document.getElementById('spotMapsLink').value.trim(), origin:document.getElementById('spotOrigin').value.trim(),
+    visited: document.getElementById('spotVisited').value==='1', rating:parseInt(document.getElementById('spotRating').value)||0,
+    notes:document.getElementById('spotNotes').value.trim()};
+  if(editId){ const idx = DB.spots.findIndex(function(x){ return x.id===editId; }); DB.spots[idx] = Object.assign({id:editId}, data); }
+  else { DB.spots.push(Object.assign({id:uid()}, data)); }
+  persist('spots');
+  closeForm('spotForm');
+  renderFood();
+}
+function deleteSpot(id){ DB.spots = DB.spots.filter(function(s){ return s.id!==id; }); persist('spots'); renderFood(); }
+
+/* ============ PLACES ============ */
+let currentPlaceTab = 'want';
+function placeTab(name){ currentPlaceTab = name; renderPlaces(); }
+function renderPlaces(){
+  document.getElementById('placeTab-want').className='btn btn-sm '+(currentPlaceTab==='want'?'btn-amber':'btn-outline-light');
+  document.getElementById('placeTab-visited').className='btn btn-sm '+(currentPlaceTab==='visited'?'btn-amber':'btn-outline-light');
+  const filtered = DB.places.filter(function(p){ return currentPlaceTab==='visited' ? p.visited : !p.visited; });
+  const box = document.getElementById('placeList');
+  box.innerHTML = filtered.length ? filtered.map(function(p){
+    const maps = mapsUrlFor(p.name, p.mapsLink);
+    return '<div class="item">'+
+    (p.img?'<img class="trip-img" style="height:100px;" src="'+esc(p.img)+'" onerror="this.style.display=\'none\'">':'')+
+    '<div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(p.name)+'</div>'+
+      '<div class="item-meta"><span class="pill">'+esc(p.cat)+'</span>'+(p.visited?stars(p.rating):'')+'</div>'+
+      (p.notes?'<div class="item-meta" style="margin-top:3px;">'+esc(p.notes)+'</div>':'')+
+      linkChips(p.website, maps)+
+      renderMapBlock('place', p.id, p.name)+
+      '</div><div class="item-actions">'+editBtn("editPlace('"+p.id+"')")+'<button class="icon-btn" onclick="deletePlace(\''+p.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">Nothing '+(currentPlaceTab==='visited'?'visited':'on the list')+' yet.</div>';
+  flushPendingMapInits();
+}
+function openPlaceForm(){
+  document.getElementById('editingPlaceId').value='';
+  ['placeName','placeImg','placeRating','placeNotes','placeWebsite','placeMapsLink','placePhotoData','placeOrigin'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('placePhotoPreview').style.display='none';
+  openForm('placeForm');
+}
+function editPlace(id){
+  const p = DB.places.find(function(x){ return x.id===id; }); if(!p) return;
+  document.getElementById('editingPlaceId').value = id;
+  document.getElementById('placeName').value = p.name;
+  document.getElementById('placeImg').value = p.img||'';
+  document.getElementById('placeWebsite').value = p.website||'';
+  document.getElementById('placeMapsLink').value = p.mapsLink||'';
+  document.getElementById('placeOrigin').value = p.origin||'';
+  document.getElementById('placeCat').value = p.cat;
+  document.getElementById('placeVisited').value = p.visited?'1':'0';
+  document.getElementById('placeRating').value = p.rating||'';
+  document.getElementById('placeNotes').value = p.notes||'';
+  document.getElementById('placePhotoData').value='';
+  document.getElementById('placePhotoPreview').style.display='none';
+  openForm('placeForm');
+}
+function savePlace(){
+  const name = document.getElementById('placeName').value.trim();
+  if(!name) return;
+  const photoData = document.getElementById('placePhotoData').value;
+  const data = {name:name, cat:document.getElementById('placeCat').value, img: photoData || document.getElementById('placeImg').value.trim(),
+    website:document.getElementById('placeWebsite').value.trim(), mapsLink:document.getElementById('placeMapsLink').value.trim(), origin:document.getElementById('placeOrigin').value.trim(),
+    visited: document.getElementById('placeVisited').value==='1', rating:parseInt(document.getElementById('placeRating').value)||0,
+    notes:document.getElementById('placeNotes').value.trim()};
+  const editId = document.getElementById('editingPlaceId').value;
+  if(editId){ const idx = DB.places.findIndex(function(x){ return x.id===editId; }); DB.places[idx] = Object.assign({id:editId}, data); }
+  else { DB.places.push(Object.assign({id:uid()}, data)); }
+  persist('places');
+  closeForm('placeForm');
+  renderPlaces();
+}
+function deletePlace(id){ DB.places = DB.places.filter(function(p){ return p.id!==id; }); persist('places'); renderPlaces(); }
+/* ============ PACKING ============ */
+function renderPacking(){
+  const cats = ['Documents','Clothing','Winter Gear','Electronics','Toiletries','Misc'];
+  const box = document.getElementById('packList');
+  box.innerHTML = cats.map(function(c){
+    const items = DB.packing.filter(function(i){ return i.cat===c; });
+    if(!items.length) return '';
+    return '<div class="section-label">'+c+'</div><div class="item">' + items.map(function(i){
+      return '<div class="check-item '+(i.done?'done':'')+'">'+
+        '<input type="checkbox" '+(i.done?'checked':'')+' onchange="togglePack(\''+i.id+'\')">'+
+        '<span class="clabel" style="flex:1;">'+esc(i.text)+'</span>'+
+        '<button class="icon-btn" onclick="deletePack(\''+i.id+'\')" style="color:var(--rust)">x</button></div>';
+    }).join('') + '</div>';
+  }).join('');
+}
+function addPackItem(){
+  const text = document.getElementById('packNewItem').value.trim();
+  if(!text) return;
+  DB.packing.push({id:uid(), text:text, cat:document.getElementById('packNewCat').value, done:false});
+  persist('packing');
+  document.getElementById('packNewItem').value='';
+  renderPacking();
+}
+function togglePack(id){ const it = DB.packing.find(function(i){ return i.id===id; }); it.done=!it.done; persist('packing'); renderPacking(); }
+function deletePack(id){ DB.packing = DB.packing.filter(function(i){ return i.id!==id; }); persist('packing'); renderPacking(); }
+
+/* ============ JOURNAL ============ */
+function renderJournal(){
+  const sorted = DB.journal.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  const box = document.getElementById('journalList');
+  box.innerHTML = sorted.length ? sorted.map(function(j){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:15px;">'+j.mood+' '+esc(j.title||'Untitled')+'</div>'+
+      '<div class="item-meta">'+j.date+'</div>'+
+      '<p style="font-size:13px; margin:6px 0 0; line-height:1.5;">'+esc(j.text)+'</p>'+
+      '</div><div class="item-actions">'+editBtn("editJournal('"+j.id+"')")+'<button class="icon-btn" onclick="deleteJournal(\''+j.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No entries yet — write your first one.</div>';
+}
+function openJournalForm(){
+  document.getElementById('editingJournalId').value='';
+  ['jTitle','jText'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('jDate').value = localDateKey();
+  openForm('journalForm');
+}
+function editJournal(id){
+  const j = DB.journal.find(function(x){ return x.id===id; }); if(!j) return;
+  document.getElementById('editingJournalId').value = id;
+  document.getElementById('jDate').value = j.date;
+  document.getElementById('jMood').value = j.mood;
+  document.getElementById('jTitle').value = j.title||'';
+  document.getElementById('jText').value = j.text;
+  openForm('journalForm');
+}
+function saveJournal(){
+  const text = document.getElementById('jText').value.trim();
+  if(!text) return;
+  const data = {date:document.getElementById('jDate').value||localDateKey(),
+    mood:document.getElementById('jMood').value, title:document.getElementById('jTitle').value.trim(), text:text};
+  const editId = document.getElementById('editingJournalId').value;
+  if(editId){ const idx = DB.journal.findIndex(function(x){ return x.id===editId; }); DB.journal[idx] = Object.assign({id:editId}, data); }
+  else { DB.journal.push(Object.assign({id:uid()}, data)); }
+  persist('journal');
+  closeForm('journalForm');
+  renderJournal();
+}
+function deleteJournal(id){ DB.journal = DB.journal.filter(function(j){ return j.id!==id; }); persist('journal'); renderJournal(); }
+
+
+function openGoogleTranslate(){
+  const value=(document.getElementById('quickTranslateText').value||'').trim();
+  const url='https://translate.google.com/?sl=auto&tl=cs&text='+encodeURIComponent(value)+'&op=translate';
+  window.open(url,'_blank','noopener');
+}
+function openGoogleImageTranslate(){
+  window.open('https://translate.google.com/?sl=auto&tl=en&op=images','_blank','noopener');
+}
+function previewTranslateImage(input){
+  const file=input.files && input.files[0];
+  if(!file) return;
+  const img=document.getElementById('translateImagePreview');
+  img.src=URL.createObjectURL(file);
+  img.style.display='block';
+}
+function googleTranslateElementInit(){
+  if(window.google && google.translate){
+    new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,cs',autoDisplay:false,layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
+  }
+}
+
+/* ============ PHRASEBOOK ============ */
+function renderPhrasebook(){
+  const q = (document.getElementById('phraseSearch').value||'').toLowerCase();
+  const allPhraseData = PHRASES.concat(EXTRA_PHRASES);
+  const filtered = allPhraseData.filter(function(p){ return p.join(' ').toLowerCase().indexOf(q)!==-1; });
+  document.getElementById('phraseList').innerHTML = '<div class="item">' + filtered.map(function(p){
+    return '<div style="padding:9px 0; border-bottom:1px dashed #d7cfb6;">'+
+      '<div class="item-title" style="font-size:14.5px;">'+esc(p[0])+'</div>'+
+      '<div class="item-meta">'+esc(p[1])+' - <span class="mono">'+esc(p[2])+'</span></div></div>';
+  }).join('') + '</div>';
+}
+
+/* ============ EMERGENCY ============ */
+function renderEmergency(){
+  document.getElementById('emEmbassy').value = DB.emergency.embassy || '';
+  document.getElementById('emInsurance').value = DB.emergency.insurance || '';
+  document.getElementById('emIsic').value = DB.emergency.isic || '';
+  document.getElementById('emPassport').value = DB.emergency.passport || '';
+  document.getElementById('emContact').value = DB.emergency.contact || '';
+}
+function saveEmergency(){
+  DB.emergency = {
+    embassy: document.getElementById('emEmbassy').value,
+    insurance: document.getElementById('emInsurance').value,
+    isic: document.getElementById('emIsic').value,
+    passport: document.getElementById('emPassport').value,
+    contact: document.getElementById('emContact').value
+  };
+  persist('emergency');
+}
+
+/* ============ TRANSIT ============ */
+function renderTransit(){
+  document.getElementById('transitStart').value = DB.settings.transitStart || '';
+  updateTransitBar();
+}
+function saveTransit(){
+  DB.settings.transitStart = document.getElementById('transitStart').value;
+  persist('settings');
+  updateTransitBar();
+}
+function updateTransitBar(){
+  const startVal = DB.settings.transitStart;
+  if(!startVal){ document.getElementById('transitDaysLeft').textContent='Set a start date'; document.getElementById('transitEndDate').textContent=''; document.getElementById('transitBar').style.width='0%'; return; }
+  const start = parseLocalDate(startVal);
+  const end = new Date(start); end.setDate(end.getDate()+90);
+  const today = new Date();
+  const daysLeft = Math.max(0, daysBetween(today, end));
+  const pct = Math.min(100, Math.max(0,((90-daysLeft)/90)*100));
+  document.getElementById('transitDaysLeft').textContent = daysLeft+' days left';
+  document.getElementById('transitEndDate').textContent = 'expires '+end.toISOString().slice(0,10);
+  document.getElementById('transitBar').style.width = pct+'%';
+}
+
+/* ============ CLASSES ============ */
+function renderClasses(){
+  const box = document.getElementById('classList');
+  box.innerHTML = DB.classes.length ? DB.classes.map(function(c){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(c.name)+'</div>'+
+      '<div class="item-meta">'+esc(c.days||'')+' '+esc(c.time||'')+(c.room?' - Room '+esc(c.room):'')+'</div>'+
+      (c.prof?'<div class="item-meta">Prof: '+esc(c.prof)+'</div>':'')+
+      (c.notes?'<div class="item-meta">'+esc(c.notes)+'</div>':'')+
+      '</div><div class="item-actions">'+editBtn("editClass('"+c.id+"')")+'<button class="icon-btn" onclick="deleteClass(\''+c.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No classes added yet.</div>';
+}
+function openClassForm(){
+  document.getElementById('editingClassId').value='';
+  ['clName','clDays','clTime','clRoom','clProf','clNotes'].forEach(function(id){ document.getElementById(id).value=''; });
+  openForm('classForm');
+}
+function editClass(id){
+  const c = DB.classes.find(function(x){ return x.id===id; }); if(!c) return;
+  document.getElementById('editingClassId').value = id;
+  document.getElementById('clName').value = c.name;
+  document.getElementById('clDays').value = c.days||'';
+  document.getElementById('clTime').value = c.time||'';
+  document.getElementById('clRoom').value = c.room||'';
+  document.getElementById('clProf').value = c.prof||'';
+  document.getElementById('clNotes').value = c.notes||'';
+  openForm('classForm');
+}
+function saveClass(){
+  const name = document.getElementById('clName').value.trim();
+  if(!name) return;
+  const data = {name:name, days:document.getElementById('clDays').value.trim(), time:document.getElementById('clTime').value.trim(),
+    room:document.getElementById('clRoom').value.trim(), prof:document.getElementById('clProf').value.trim(), notes:document.getElementById('clNotes').value.trim()};
+  const editId = document.getElementById('editingClassId').value;
+  if(editId){ const idx = DB.classes.findIndex(function(x){ return x.id===editId; }); DB.classes[idx] = Object.assign({id:editId}, data); }
+  else { DB.classes.push(Object.assign({id:uid()}, data)); }
+  persist('classes');
+  closeForm('classForm');
+  renderClasses();
+}
+function deleteClass(id){ DB.classes = DB.classes.filter(function(c){ return c.id!==id; }); persist('classes'); renderClasses(); }
+
+/* ============ CONTACTS ============ */
+function renderContacts(){
+  const box = document.getElementById('contactList');
+  box.innerHTML = DB.contacts.length ? DB.contacts.map(function(c){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(c.name)+'</div>'+
+      '<div class="item-meta"><span class="pill">'+esc(c.cat)+'</span>'+esc(c.phone||'')+'</div>'+
+      (c.notes?'<div class="item-meta">'+esc(c.notes)+'</div>':'')+
+      '</div><div class="item-actions">'+editBtn("editContact('"+c.id+"')")+'<button class="icon-btn" onclick="deleteContact(\''+c.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No contacts yet.</div>';
+}
+function openContactForm(){
+  document.getElementById('editingContactId').value='';
+  ['ctcName','ctcPhone','ctcNotes'].forEach(function(id){ document.getElementById(id).value=''; });
+  openForm('contactForm');
+}
+function editContact(id){
+  const c = DB.contacts.find(function(x){ return x.id===id; }); if(!c) return;
+  document.getElementById('editingContactId').value = id;
+  document.getElementById('ctcName').value = c.name;
+  document.getElementById('ctcCat').value = c.cat;
+  document.getElementById('ctcPhone').value = c.phone||'';
+  document.getElementById('ctcNotes').value = c.notes||'';
+  openForm('contactForm');
+}
+function saveContact(){
+  const name = document.getElementById('ctcName').value.trim();
+  if(!name) return;
+  const data = {name:name, cat:document.getElementById('ctcCat').value, phone:document.getElementById('ctcPhone').value.trim(), notes:document.getElementById('ctcNotes').value.trim()};
+  const editId = document.getElementById('editingContactId').value;
+  if(editId){ const idx = DB.contacts.findIndex(function(x){ return x.id===editId; }); DB.contacts[idx] = Object.assign({id:editId}, data); }
+  else { DB.contacts.push(Object.assign({id:uid()}, data)); }
+  persist('contacts');
+  closeForm('contactForm');
+  renderContacts();
+}
+function deleteContact(id){ DB.contacts = DB.contacts.filter(function(c){ return c.id!==id; }); persist('contacts'); renderContacts(); }
+
+/* ============ LINK VAULT ============ */
+function renderLinks(){
+  const box = document.getElementById('linkList');
+  box.innerHTML = DB.links.length ? DB.links.map(function(l){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+esc(l.name)+'</div>'+
+      (l.notes?'<div class="item-meta">'+esc(l.notes)+'</div>':'')+
+      linkChips(l.url,'')+
+      '</div><div class="item-actions">'+editBtn("editLink('"+l.id+"')")+'<button class="icon-btn" onclick="deleteLink(\''+l.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No links saved yet.</div>';
+}
+function openLinkForm(){
+  document.getElementById('editingLinkId').value='';
+  ['lnkName','lnkUrl','lnkNotes'].forEach(function(id){ document.getElementById(id).value=''; });
+  openForm('linkForm');
+}
+function editLink(id){
+  const l = DB.links.find(function(x){ return x.id===id; }); if(!l) return;
+  document.getElementById('editingLinkId').value = id;
+  document.getElementById('lnkName').value = l.name;
+  document.getElementById('lnkUrl').value = l.url;
+  document.getElementById('lnkNotes').value = l.notes||'';
+  openForm('linkForm');
+}
+function saveLink(){
+  const name = document.getElementById('lnkName').value.trim();
+  const url = document.getElementById('lnkUrl').value.trim();
+  if(!name || !url) { alert('Add a name and URL.'); return; }
+  const data = {name:name, url:url, notes:document.getElementById('lnkNotes').value.trim()};
+  const editId = document.getElementById('editingLinkId').value;
+  if(editId){ const idx = DB.links.findIndex(function(x){ return x.id===editId; }); DB.links[idx] = Object.assign({id:editId}, data); }
+  else { DB.links.push(Object.assign({id:uid()}, data)); }
+  persist('links');
+  closeForm('linkForm');
+  renderLinks();
+}
+function deleteLink(id){ DB.links = DB.links.filter(function(l){ return l.id!==id; }); persist('links'); renderLinks(); }
+
+/* ============ CASH TRACKER ============ */
+function renderCash(){
+  const total = DB.cashLog.reduce(function(s,c){ return s + (parseFloat(c.amt)||0); },0);
+  document.getElementById('cashOnHand').textContent = Math.round(total).toLocaleString() + ' Kc withdrawn total';
+  const sorted = DB.cashLog.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  document.getElementById('cashList').innerHTML = sorted.length ? sorted.map(function(c){
+    return '<div class="item"><div class="item-top"><div>'+
+      '<div class="item-title" style="font-size:14px;">'+(parseFloat(c.amt)||0)+' Kc</div>'+
+      '<div class="item-meta">'+c.date+(c.fee?' - fee '+c.fee+' Kc':'')+'</div>'+
+      (c.notes?'<div class="item-meta">'+esc(c.notes)+'</div>':'')+
+      '</div><div class="item-actions">'+editBtn("editCash('"+c.id+"')")+'<button class="icon-btn" onclick="deleteCash(\''+c.id+'\')" style="color:var(--rust)">x</button></div></div></div>';
+  }).join('') : '<div class="empty-msg">No withdrawals logged yet.</div>';
+}
+function openCashForm(){
+  document.getElementById('editingCashId').value='';
+  ['cshAmt','cshFee','cshNotes'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('cshDate').value = localDateKey();
+  openForm('cashForm');
+}
+function editCash(id){
+  const c = DB.cashLog.find(function(x){ return x.id===id; }); if(!c) return;
+  document.getElementById('editingCashId').value = id;
+  document.getElementById('cshDate').value = c.date;
+  document.getElementById('cshAmt').value = c.amt;
+  document.getElementById('cshFee').value = c.fee||'';
+  document.getElementById('cshNotes').value = c.notes||'';
+  openForm('cashForm');
+}
+function saveCash(){
+  const amt = parseFloat(document.getElementById('cshAmt').value);
+  if(!amt){ alert('Enter an amount.'); return; }
+  const data = {date:document.getElementById('cshDate').value||localDateKey(), amt:amt,
+    fee:parseFloat(document.getElementById('cshFee').value)||0, notes:document.getElementById('cshNotes').value.trim()};
+  const editId = document.getElementById('editingCashId').value;
+  if(editId){ const idx = DB.cashLog.findIndex(function(x){ return x.id===editId; }); DB.cashLog[idx] = Object.assign({id:editId}, data); }
+  else { DB.cashLog.push(Object.assign({id:uid()}, data)); }
+  persist('cashLog');
+  closeForm('cashForm');
+  renderCash();
+}
+function deleteCash(id){ DB.cashLog = DB.cashLog.filter(function(c){ return c.id!==id; }); persist('cashLog'); renderCash(); }
+/* ============ THEME & LOGO ============ */
+const THEME_PRESETS = {
+  blueprint:{key:'blueprint', label:'Blueprint', navyDeep:'#0A1626', navyCard:'#152840', amber:'#E8A33D', cyan:'#6FC7D6', rust:'#C1592F'},
+  autumn:{key:'autumn', label:'Autumn', navyDeep:'#241208', navyCard:'#3A2313', amber:'#F0B457', cyan:'#D98C4A', rust:'#A6431F'},
+  forest:{key:'forest', label:'Forest', navyDeep:'#0C1712', navyCard:'#16241D', amber:'#C9A227', cyan:'#6FAF8B', rust:'#8B5E34'},
+  plum:{key:'plum', label:'Plum', navyDeep:'#1A0F24', navyCard:'#2A1B38', amber:'#E0A6C4', cyan:'#B08AD1', rust:'#8B3A62'}
+};
+
+
+
+function allThemes() {
+  const customThemes = DB.settings.customThemes || [];
+  return [
+    ...Object.values(THEME_PRESETS),
+    ...customThemes
+  ];
+}
+
+function themeHex(value){
+  if(!value) return '';
+  return String(value).startsWith('#') ? String(value) : '#' + String(value);
+}
+function applyTheme(key) {
+  const t = allThemes().find(theme => theme.key === key) || THEME_PRESETS.blueprint;
+  const root = document.documentElement;
+
+  root.style.setProperty("--navy-deep", themeHex(t.navyDeep));
+  root.style.setProperty("--navy-card", themeHex(t.navyCard));
+  root.style.setProperty("--amber", themeHex(t.amber));
+  root.style.setProperty("--cyan", themeHex(t.cyan));
+  root.style.setProperty("--rust", themeHex(t.rust));
+  root.style.setProperty("--navy", themeHex(t.navyDeep));
+}
+function setTheme(key){
+  DB.settings.theme = key;
+  persist('settings');
+  applyTheme(key);
+  renderSettings();
+}
+function handleLogoUpload(inputEl){
+  const file = inputEl.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const img = new Image();
+    img.onload = function(){
+      const size = 160;
+      const canvas = document.createElement('canvas');
+      canvas.width = size; canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const scale = Math.max(size/img.width, size/img.height);
+      const w = img.width*scale, h = img.height*scale;
+      ctx.drawImage(img, (size-w)/2, (size-h)/2, w, h);
+      DB.settings.logoImg = canvas.toDataURL('image/png', 0.85);
+      persist('settings');
+      updateHeaderLogo();
+      renderSettings();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function clearLogo(){
+  DB.settings.logoImg = '';
+  persist('settings');
+  updateHeaderLogo();
+  renderSettings();
+}
+function updateHeaderLogo(){
+  const el = document.getElementById('headerLogo');
+  if(DB.settings.logoImg){ el.src = DB.settings.logoImg; el.style.display='block'; }
+  else { el.style.display='none'; }
+}
+
+/* ============ SETTINGS / ADMIN ============ */
+function toggleEditMode(){
+  DB.settings.editMode = document.getElementById('editModeToggle').checked;
+  persist('settings');
+  document.getElementById('editBadge').style.display = DB.settings.editMode ? 'inline-block' : 'none';
+  if(DB.settings.editMode) toggleVisualEditor(true);
+  else toggleVisualEditor(false);
+}
+function saveFxRateSettings(){
+  const v = parseFloat(document.getElementById('settingsFxRate').value);
+  if(v){ DB.settings.fxRate = v; persist('settings'); }
+}
+function saveHomeBase(){
+  DB.settings.homeBase = document.getElementById('settingsHomeBase').value.trim() || 'Prague, Czech Republic';
+  persist('settings');
+}
+async function saveMapsKey(){
+  DB.settings.mapsApiKey = document.getElementById('settingsMapsKey').value.trim();
+  await saveKey('settings', DB.settings);
+  location.reload();
+}
+function renderSettings(){
+  document.getElementById('editModeToggle').checked = !!DB.settings.editMode;
+  document.getElementById('settingsFxRate').value = DB.settings.fxRate;
+  document.getElementById('settingsHomeBase').value = DB.settings.homeBase;
+  document.getElementById('settingsMapsKey').value = DB.settings.mapsApiKey || '';
+
+  document.getElementById('themeSwatches').innerHTML = allThemes().map(function(t){
+    const isCustom = t.key.indexOf('custom-') === 0;
+    return '<div class="theme-swatch-wrap">'+
+      '<span class="theme-swatch '+(DB.settings.theme===t.key?'active':'')+'" onclick="setTheme(\''+t.key+'\')">'+
+      '<span class="dots" style="background:'+themeHex(t.navyDeep)+';"><span class="d" style="background:#'+t.amber+'"></span><span class="d" style="background:#'+t.cyan+'"></span><span class="d" style="background:#'+t.rust+'"></span></span>'+
+      '<span>'+esc(t.label)+'</span></span>'+
+      (isCustom ? '<button class="icon-btn" style="color:var(--rust); font-size:11px;" onclick="event.stopPropagation(); deleteCustomTheme(\''+t.key+'\')">delete</button>' : '')+
+      '</div>';
+  }).join('');
+  document.getElementById('logoBigPreview').src = DB.settings.logoImg || '';
+  document.getElementById('logoBigPreview').style.display = DB.settings.logoImg ? 'block':'none';
+
+  document.getElementById('budgetCatManager').innerHTML = DB.settings.budgetCategories.map(function(c){
+    return '<span class="catchip">'+esc(c)+'<button onclick="removeBudgetCategory(\''+esc(c).replace(/'/g,"\\'")+'\')">x</button></span>';
+  }).join('') || '<p class="card-sub">No categories yet.</p>';
+
+  document.getElementById('eventCatManager').innerHTML = Object.keys(DB.settings.eventCategories).map(function(k){
+    const ec = DB.settings.eventCategories[k];
+    return '<span class="catchip"><span class="color-dot" style="background:'+ec.color+'"></span>'+esc(ec.label)+'<button onclick="removeEventCategory(\''+k+'\')">x</button></span>';
+  }).join('');
+
+  document.getElementById('tileVisManager').innerHTML = BUILTIN_TILES.map(function(t){
+    const hidden = DB.settings.hiddenTiles.indexOf(t.key)!==-1;
+    return '<div class="toggle-row"><div>'+t.emoji+' '+t.name+'</div>'+
+      '<label class="switch"><input type="checkbox" '+(hidden?'':'checked')+' onchange="toggleTileHiddenFromSettings(\''+t.key+'\')"><span class="slider"></span></label></div>';
+  }).join('');
+}
+function toggleTileHiddenFromSettings(key){ toggleTileHidden(key); renderSettings(); }
+function addBudgetCategory(){
+  const v = document.getElementById('newBudgetCat').value.trim();
+  if(!v || DB.settings.budgetCategories.indexOf(v)!==-1) return;
+  DB.settings.budgetCategories.push(v);
+  persist('settings');
+  document.getElementById('newBudgetCat').value='';
+  renderSettings();
+}
+function removeBudgetCategory(c){
+  DB.settings.budgetCategories = DB.settings.budgetCategories.filter(function(x){ return x!==c; });
+  persist('settings'); renderSettings();
+}
+function addEventCategory(){
+  const name = document.getElementById('newEventCatName').value.trim();
+  const color = document.getElementById('newEventCatColor').value;
+  if(!name) return;
+  const key = name.toLowerCase().replace(/[^a-z0-9]+/g,'-').slice(0,20) || uid();
+  DB.settings.eventCategories[key] = {label:name, color:color};
+  persist('settings');
+  document.getElementById('newEventCatName').value='';
+  renderSettings();
+}
+function removeEventCategory(key){
+  delete DB.settings.eventCategories[key];
+  persist('settings'); renderSettings();
+}
+function exportData(){
+  const backup = {};
+  Object.keys(DEFAULTS).forEach(function(k){ backup[k] = DB[k]; });
+  backup._exportedAt = new Date().toISOString();
+  const blob = new Blob([JSON.stringify(backup, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'praha-hq-backup-'+localDateKey()+'.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+function importData(inputEl){
+  const file = inputEl.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async function(e){
+    try{
+      const data = JSON.parse(e.target.result);
+      if(!confirm('This will overwrite your current data with the backup file. Continue?')) return;
+      for(const k of Object.keys(DEFAULTS)){
+        if(data[k] !== undefined){ DB[k] = data[k]; await saveKey(k, DB[k]); }
+      }
+      alert('Backup restored.');
+      renderScreen('settings');
+    }catch(err){ alert('Could not read that file — make sure it is a Praha HQ backup JSON.'); }
+  };
+  reader.readAsText(file);
+}
+
+
+/* ============ FULL VISUAL EDITOR ============ */
+let visualEditorOpen = false;
+let visualSelected = null;
+let visualDragging = null;
+
+function visualTargetFor(el){
+  if(!el) return null;
+  return el.closest('.hero,.card,.stat,.item,.more-tile,.section-label,.form-card,.tile,.class-card,.trip-card,.place-card,.food-card,.journal-card') || el.closest('[class*="card"]');
+}
+
+function visualIdFor(el){
+  if(!el) return null;
+  if(!el.dataset.veId){
+    const screen = el.closest('.screen');
+    const screenId = screen ? screen.id : 'global';
+    const candidates = Array.from(document.querySelectorAll('#'+CSS.escape(screenId)+' .hero, #'+CSS.escape(screenId)+' .card, #'+CSS.escape(screenId)+' .stat, #'+CSS.escape(screenId)+' .item, #'+CSS.escape(screenId)+' .more-tile, #'+CSS.escape(screenId)+' .section-label, #'+CSS.escape(screenId)+' .form-card, #'+CSS.escape(screenId)+' .tile, #'+CSS.escape(screenId)+' [class*="card"]'));
+    const index = Math.max(0,candidates.indexOf(el));
+    el.dataset.veId = screenId + ':' + index + ':' + (el.className||'').toString().split(' ')[0];
+  }
+  return el.dataset.veId;
+}
+
+function visualOverrides(){ 
+  if(!DB.settings.visualOverrides) DB.settings.visualOverrides = {};
+  return DB.settings.visualOverrides;
+}
+
+function visualStyleObject(el){
+  const cs = getComputedStyle(el);
+  return {
+    x: parseFloat(el.dataset.veX || 0) || 0,
+    y: parseFloat(el.dataset.veY || 0) || 0,
+    width: el.style.width || '',
+    height: el.style.height || '',
+    bg: el.style.backgroundColor || rgbToHex(cs.backgroundColor),
+    text: el.style.color || rgbToHex(cs.color),
+    border: el.style.borderColor || rgbToHex(cs.borderColor),
+    borderWidth: el.style.borderWidth || '',
+    radius: el.style.borderRadius || '',
+    padding: el.style.padding || '',
+    margin: el.style.margin || '',
+    fontSize: el.style.fontSize || '',
+    weight: el.style.fontWeight || '',
+    opacity: el.style.opacity || '',
+    rotate: parseFloat(el.dataset.veRotate || 0) || 0,
+    scale: parseFloat(el.dataset.veScale || 1) || 1,
+    shadow: el.dataset.veShadow || '',
+    blur: parseFloat(el.dataset.veBlur || 0) || 0,
+    z: el.style.zIndex || '',
+    visibility: el.dataset.veVisibility || ''
+  };
+}
+function rgbToHex(rgb){
+  const m=rgb && rgb.match(/\d+/g);
+  if(!m || m.length<3) return '#ffffff';
+  return '#'+m.slice(0,3).map(v=>Number(v).toString(16).padStart(2,'0')).join('');
+}
+function applyVisualStyle(el, s, save=true){
+  if(!el || !s) return;
+  const x=Number(s.x)||0, y=Number(s.y)||0, r=Number(s.rotate)||0, sc=Number(s.scale)||1;
+  el.dataset.veX=x; el.dataset.veY=y; el.dataset.veRotate=r; el.dataset.veScale=sc;
+  el.style.transform=`translate(${x}px,${y}px) rotate(${r}deg) scale(${sc})`;
+  const map={width:'width',height:'height',bg:'backgroundColor',text:'color',border:'borderColor',borderWidth:'borderWidth',radius:'borderRadius',padding:'padding',margin:'margin',fontSize:'fontSize',weight:'fontWeight',opacity:'opacity',z:'zIndex'};
+  Object.keys(map).forEach(k=>{ if(s[k]!==undefined && s[k]!==null && s[k]!=='' && s[k]!=='default') el.style[map[k]]=s[k]; });
+  if(s.shadow==='none') el.style.boxShadow='none';
+  else if(s.shadow==='soft') el.style.boxShadow='0 4px 18px rgba(0,0,0,.16)';
+  else if(s.shadow==='strong') el.style.boxShadow='0 10px 30px rgba(0,0,0,.28)';
+  if(Number(s.blur)>0) el.style.filter='blur('+Number(s.blur)+'px)';
+  else if(el.style.filter) el.style.filter='';
+  el.classList.toggle('visual-edit-hidden',s.visibility==='hidden');
+  if(save){
+    visualOverrides()[visualIdFor(el)] = s;
+    persist('settings');
+  }
+}
+function applySavedVisuals(){
+  document.querySelectorAll('.screen .hero,.screen .card,.screen .stat,.screen .item,.screen .more-tile,.screen .section-label,.screen .form-card,.screen .tile,[class*="card"]').forEach(function(el){
+    const id=visualIdFor(el), s=visualOverrides()[id];
+    if(s) applyVisualStyle(el,s,false);
+  });
+}
+function populateVisualEditor(el){
+  visualSelected=el;
+  el.classList.add('visual-edit-selected');
+  const s=visualOverrides()[visualIdFor(el)] || visualStyleObject(el);
+  const ids=['X','Y','Width','Height','Bg','Text','Border','BorderWidth','Radius','Padding','Margin','FontSize','Weight','Opacity','Rotate','Scale','Shadow','Blur','Z','Visibility'];
+  const vals=[s.x,s.y,s.width,s.height,s.bg,s.text,s.border,s.borderWidth,s.radius,s.padding,s.margin,parseFloat(s.fontSize)||'',s.weight,s.opacity,s.rotate,s.scale,s.shadow,s.blur,s.z,s.visibility];
+  ids.forEach(function(n,i){ const e=document.getElementById('ve'+n); if(e) e.value=vals[i] ?? ''; });
+  document.getElementById('veSelectedLabel').textContent=(el.tagName||'ELEMENT').toLowerCase()+' • '+(el.className||'').toString().split(' ')[0];
+}
+function readVisualEditor(){
+  if(!visualSelected) return;
+  const s={
+    x:document.getElementById('veX').value||0,y:document.getElementById('veY').value||0,
+    width:document.getElementById('veWidth').value,height:document.getElementById('veHeight').value,
+    bg:document.getElementById('veBg').value,text:document.getElementById('veText').value,border:document.getElementById('veBorder').value,
+    borderWidth:document.getElementById('veBorderWidth').value+'px',radius:document.getElementById('veRadius').value+'px',
+    padding:document.getElementById('vePadding').value,margin:document.getElementById('veMargin').value,
+    fontSize:document.getElementById('veFontSize').value?document.getElementById('veFontSize').value+'px':'',
+    weight:document.getElementById('veWeight').value,opacity:document.getElementById('veOpacity').value,
+    rotate:document.getElementById('veRotate').value||0,scale:document.getElementById('veScale').value||1,
+    shadow:document.getElementById('veShadow').value,blur:document.getElementById('veBlur').value||0,
+    z:document.getElementById('veZ').value,visibility:document.getElementById('veVisibility').value
+  };
+  applyVisualStyle(visualSelected,s,true);
+}
+function toggleVisualEditor(force){
+  if(force!==undefined) visualEditorOpen=force; else visualEditorOpen=!visualEditorOpen;
+  if(visualEditorOpen && !DB.settings.editMode){ 
+    DB.settings.editMode=true; persist('settings');
+    const t=document.getElementById('editModeToggle'); if(t) t.checked=true;
+  }
+  document.getElementById('visualEditorBar').classList.toggle('open',visualEditorOpen);
+  document.body.classList.toggle('visual-editor-on',visualEditorOpen);
+  applySavedVisuals();
+}
+function clearVisualSelection(){
+  if(visualSelected) visualSelected.classList.remove('visual-edit-selected');
+  visualSelected=null;
+}
+function resetSelectedVisual(){
+  if(!visualSelected) return;
+  const id=visualIdFor(visualSelected);
+  delete visualOverrides()[id]; persist('settings');
+  visualSelected.removeAttribute('style');
+  delete visualSelected.dataset.veX; delete visualSelected.dataset.veY; delete visualSelected.dataset.veRotate; delete visualSelected.dataset.veScale;
+  visualSelected.classList.remove('visual-edit-hidden','visual-edit-selected');
+  visualSelected=null;
+}
+function clearVisualOverrides(){
+  if(!confirm('Reset all manual visual edits on every page?')) return;
+  DB.settings.visualOverrides={}; persist('settings');
+  document.querySelectorAll('.screen [data-ve-id]').forEach(function(el){el.removeAttribute('style');el.classList.remove('visual-edit-hidden');});
+  if(visualSelected) visualSelected.classList.remove('visual-edit-selected');
+  visualSelected=null;
+}
+function veNudge(dx,dy){
+  if(!visualSelected) return;
+  const s=visualOverrides()[visualIdFor(visualSelected)] || visualStyleObject(visualSelected);
+  s.x=(Number(s.x)||0)+dx; s.y=(Number(s.y)||0)+dy;
+  applyVisualStyle(visualSelected,s,true); populateVisualEditor(visualSelected);
+}
+function installVisualEditorHandlers(){
+  document.removeEventListener('click',visualClickHandler,true);
+  document.addEventListener('click',visualClickHandler,true);
+  document.removeEventListener('pointerdown',visualPointerDown,true);
+  document.addEventListener('pointerdown',visualPointerDown,true);
+  document.removeEventListener('pointermove',visualPointerMove,true);
+  document.addEventListener('pointermove',visualPointerMove,true);
+  document.removeEventListener('pointerup',visualPointerUp,true);
+  document.addEventListener('pointerup',visualPointerUp,true);
+  document.querySelectorAll('#visualEditorBar input,#visualEditorBar select').forEach(function(el){
+    el.oninput=function(){ if(visualEditorOpen) readVisualEditor(); };
+    el.onchange=function(){ if(visualEditorOpen) readVisualEditor(); };
+  });
+}
+function visualClickHandler(e){
+  if(!visualEditorOpen) return;
+  if(e.target.closest('#visualEditorBar')) return;
+  const target=visualTargetFor(e.target);
+  if(!target || target.id==='app') return;
+  e.preventDefault(); e.stopPropagation();
+  if(visualSelected && visualSelected!==target) visualSelected.classList.remove('visual-edit-selected');
+  populateVisualEditor(target);
+}
+function visualPointerDown(e){
+  if(!visualEditorOpen || e.target.closest('#visualEditorBar')) return;
+  const target=visualTargetFor(e.target);
+  if(!target) return;
+  visualDragging={el:target,startX:e.clientX,startY:e.clientY,baseX:Number(target.dataset.veX)||0,baseY:Number(target.dataset.veY)||0};
+  if(visualSelected!==target) populateVisualEditor(target);
+}
+function visualPointerMove(e){
+  if(!visualDragging || !visualEditorOpen) return;
+  const d=visualDragging;
+  const s=visualOverrides()[visualIdFor(d.el)] || visualStyleObject(d.el);
+  s.x=d.baseX+(e.clientX-d.startX); s.y=d.baseY+(e.clientY-d.startY);
+  applyVisualStyle(d.el,s,false); populateVisualEditor(d.el);
+}
+function visualPointerUp(){
+  if(!visualDragging) return;
+  const d=visualDragging;
+  const s=visualOverrides()[visualIdFor(d.el)] || visualStyleObject(d.el);
+  visualOverrides()[visualIdFor(d.el)]=s; persist('settings');
+  visualDragging=null;
+}
+
+/* ============ INIT ============ */
+async function init(){
+  await loadAll();
+  applyTheme(DB.settings.theme);
+  updateHeaderLogo();
+  document.getElementById('evtDate').value = localDateKey();
+  document.getElementById('budDate').value = localDateKey();
+  document.getElementById('ftDate').value = localDateKey();
+  document.getElementById('fpDate').value = localDateKey();
+  document.getElementById('jDate').value = localDateKey();
+  document.getElementById('cshDate').value = localDateKey();
+  populateEventCatSelect();
+  populateBudgetCatSelect();
+  renderPhrasebook();
+  installVisualEditorHandlers();
+  showScreen('dashboard');
+}
+init();
+</script>
+
+<div id="visualEditorBar">
+  <div class="ve-head">
+    <div><b>Visual Editor</b><div id="veSelectedLabel" style="font-size:10px;color:#b9c3cc;">Select an element</div></div>
+    <button onclick="toggleVisualEditor(false)" style="background:#7a3020;color:#fff;border:0;border-radius:8px;padding:6px 9px;">Close</button>
+  </div>
+  <div class="ve-grid">
+    <label>X / horizontal<input id="veX" type="number" step="1"></label>
+    <label>Y / vertical<input id="veY" type="number" step="1"></label>
+    <label>Width<input id="veWidth" type="text" placeholder="auto / 320px / 80%"></label>
+    <label>Height<input id="veHeight" type="text" placeholder="auto / 200px"></label>
+    <label>Background<input id="veBg" type="color"></label>
+    <label>Text color<input id="veText" type="color"></label>
+    <label>Border color<input id="veBorder" type="color"></label>
+    <label>Border width<input id="veBorderWidth" type="number" min="0" max="20" step="1"></label>
+    <label>Corner radius<input id="veRadius" type="number" min="0" max="80" step="1"></label>
+    <label>Padding<input id="vePadding" type="text" placeholder="12px"></label>
+    <label>Margin<input id="veMargin" type="text" placeholder="10px"></label>
+    <label>Font size<input id="veFontSize" type="number" min="6" max="72" step="1"></label>
+    <label>Font weight<select id="veWeight"><option value="">default</option><option>400</option><option>500</option><option>600</option><option>700</option><option>800</option></select></label>
+    <label>Opacity<input id="veOpacity" type="number" min="0" max="1" step=".05"></label>
+    <label>Rotation °<input id="veRotate" type="number" min="-180" max="180" step="1"></label>
+    <label>Scale<input id="veScale" type="number" min=".5" max="2" step=".05"></label>
+    <label>Shadow<select id="veShadow"><option value="">default</option><option value="none">none</option><option value="soft">soft</option><option value="strong">strong</option></select></label>
+    <label>Blur<input id="veBlur" type="number" min="0" max="20" step="1"></label>
+    <label>Z-index<input id="veZ" type="number" step="1"></label>
+    <label>Visibility<select id="veVisibility"><option value="">visible</option><option value="hidden">hidden</option></select></label>
+  </div>
+  <div class="ve-actions">
+    <button onclick="veNudge(-5,0)">← 5px</button><button onclick="veNudge(5,0)">5px →</button>
+    <button onclick="veNudge(0,-5)">↑ 5px</button><button onclick="veNudge(0,5)">↓ 5px</button>
+    <button onclick="resetSelectedVisual()">Reset selected</button>
+  </div>
+</div>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+</body>
+</html>
